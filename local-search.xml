@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Go语言入门</title>
+    <link href="/2022/06/30/Go%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
+    <url>/2022/06/30/Go%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/</url>
+    
+    <content type="html"><![CDATA[<p>开始愉快的Go语言学习之旅吧</p><span id="more"></span><h2 id="Go语言学习"><a href="#Go语言学习" class="headerlink" title="Go语言学习"></a>Go语言学习</h2><ul><li>Go语言支持跨平台编译</li><li>学习Go modules包管理工具</li><li>在终端输入指令go fmt 文件名 可以自动格式化go语言代码</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Go</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试</title>
     <link href="/2022/06/30/%E6%B5%8B%E8%AF%95/"/>
     <url>/2022/06/30/%E6%B5%8B%E8%AF%95/</url>
@@ -21,7 +40,7 @@
     <link href="/2022/06/29/%E3%80%8A%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E3%80%8B/"/>
     <url>/2022/06/29/%E3%80%8A%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E3%80%8B/</url>
     
-    <content type="html"><![CDATA[<h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><p>asdfasdfasdf<br>asdfasdfasdf</p><span id="more"></span><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> nemespace std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cout&lt;&lt;<span class="hljs-string">&quot;Hello World!&quot;</span>&lt;&lt;endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><div class="note note-success">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><blockquote><p>测试</p></blockquote><span class="label label-primary">text</span><span class="label label-success">学习</span>            <input type="checkbox" disabled checked="checked">text          <a class="btn" href="url"  title="title" target="_blank">text</a><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div></div></div><pre><code class="mermaid" >ganttdateFormat  YYYY-MM-DDtitle Adding GANTT diagram to mermaidsection A sectionCompleted task            :done,    des1, 2014-01-06,2014-01-08Active task               :active,  des2, 2014-01-09, 3dFuture task               :         des3, after des2, 5dFuture task2               :         des4, after des3, 5d</code></pre><pre><code class=" mermaid">classDiagramClass01 &lt;|-- AveryLongClass : CoolClass03 *-- Class04Class05 o-- Class06Class07 .. Class08Class09 --&gt; C2 : Where am i?Class09 --* C3Class09 --|&gt; Class07Class07 : equals()Class07 : Object[] elementDataClass01 : size()Class01 : int chimpClass01 : int gorillaClass08 &lt;--&gt; C2: Cool label</code></pre><p><img src="/img/avatar.png" alt="个人照片"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><span id="more"></span><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> nemespace std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cout&lt;&lt;<span class="hljs-string">&quot;Hello World!&quot;</span>&lt;&lt;endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><div class="note note-success">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><blockquote><p>测试</p></blockquote><span class="label label-primary">text</span><span class="label label-success">学习</span>            <input type="checkbox" disabled checked="checked">text          <a class="btn" href="url"  title="title" target="_blank">text</a><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div></div></div><pre><code class="mermaid" >ganttdateFormat  YYYY-MM-DDtitle Adding GANTT diagram to mermaidsection A sectionCompleted task            :done,    des1, 2014-01-06,2014-01-08Active task               :active,  des2, 2014-01-09, 3dFuture task               :         des3, after des2, 5dFuture task2               :         des4, after des3, 5d</code></pre><pre><code class=" mermaid">classDiagramClass01 &lt;|-- AveryLongClass : CoolClass03 *-- Class04Class05 o-- Class06Class07 .. Class08Class09 --&gt; C2 : Where am i?Class09 --* C3Class09 --|&gt; Class07Class07 : equals()Class07 : Object[] elementDataClass01 : size()Class01 : int chimpClass01 : int gorillaClass08 &lt;--&gt; C2: Cool label</code></pre><p><img src="/img/avatar.png" alt="个人照片"></p>]]></content>
     
     
     <categories>
