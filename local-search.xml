@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>C++类、指针和引用</title>
+    <link href="/2022/07/03/C++%E7%B1%BB%E3%80%81%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/"/>
+    <url>/2022/07/03/C++%E7%B1%BB%E3%80%81%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>本文简单介绍了C++类、指针和引用的用法</p><span id="more"></span><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><h3 id="C-中的类"><a href="#C-中的类" class="headerlink" title="C++中的类"></a>C++中的类</h3><p>类可以将变量和函数完美的打包在一起</p><ul><li>private:里面的内容只能在类里面调用</li><li>public:里面的内容可以在类的外部访问</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>&#123;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> age,height;<br>    <span class="hljs-type">double</span> money;<br>    string books[<span class="hljs-number">100</span>];<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get_money</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> money;<br>    &#125;<br><span class="hljs-keyword">public</span>:<br>    string name;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">say</span><span class="hljs-params">()</span></span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m&quot;</span>&lt;&lt;name&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get_age</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add_money</span><span class="hljs-params">(<span class="hljs-type">double</span> x)</span></span>&#123;<br>        money+=x;<br>    &#125;<br>    <span class="hljs-function">string <span class="hljs-title">get_name</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> name;<br>    &#125;<br>&#125;c;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-comment">//    Person c;</span><br>    c.name=<span class="hljs-string">&quot;abc&quot;</span>;<br><span class="hljs-comment">//    c.age = 18;</span><br>    c.<span class="hljs-built_in">add_money</span>(<span class="hljs-number">1000</span>);<br>    cout&lt;&lt;c.<span class="hljs-built_in">get_name</span>()&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><blockquote><p>类中的变量和函数统一被称为类的成员变量</p></blockquote><p>结构体和类的作用是基本是一样的，类中默认是private，结构体中默认是<a href="">public</a></p><p><strong>构造函数：</strong></p><ul><li>构造函数没有类型，函数名称和结构体名称一样</li></ul><p><strong>结构体：</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Person</span>&#123;<br>    <span class="hljs-type">int</span> age,height;<br>    <span class="hljs-type">double</span> money;<br>    <span class="hljs-built_in">Person</span>()&#123;&#125;;<br>    <span class="hljs-built_in">Person</span> (<span class="hljs-type">int</span> _age,<span class="hljs-type">int</span> _height)&#123;<br>        age=_age;<br>        height=_height;<br>    &#125;<br>    <span class="hljs-built_in">Person</span>(<span class="hljs-type">int</span> _age,<span class="hljs-type">int</span> _height,<span class="hljs-type">double</span> _money):<span class="hljs-built_in">age</span>(_age),<span class="hljs-built_in">height</span>(_height),<span class="hljs-built_in">money</span>(_money)&#123;&#125;;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    Person p;<br>    <span class="hljs-function">Person <span class="hljs-title">p1</span><span class="hljs-params">(<span class="hljs-number">23</span>,<span class="hljs-number">180</span>,<span class="hljs-number">100.0</span>)</span></span>;<br>    Person p2 = &#123;<span class="hljs-number">18</span>,<span class="hljs-number">180</span>&#125;;<br>    cout&lt;&lt;p1.money&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Go语言入门</title>
     <link href="/2022/06/30/Go%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
     <url>/2022/06/30/Go%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/</url>
@@ -15,67 +34,6 @@
     <tags>
       
       <tag>Go</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>测试</title>
-    <link href="/2022/06/30/%E6%B5%8B%E8%AF%95/"/>
-    <url>/2022/06/30/%E6%B5%8B%E8%AF%95/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>《我的第一篇博客》</title>
-    <link href="/2022/06/29/%E3%80%8A%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E3%80%8B/"/>
-    <url>/2022/06/29/%E3%80%8A%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E3%80%8B/</url>
-    
-    <content type="html"><![CDATA[<h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><span id="more"></span><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> nemespace std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>cout&lt;&lt;<span class="hljs-string">&quot;Hello World!&quot;</span>&lt;&lt;endl;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><div class="note note-success">            <p>文字 或者 <code>markdown</code> 均可</p>          </div><blockquote><p>测试</p></blockquote><span class="label label-primary">text</span><span class="label label-success">学习</span>            <input type="checkbox" disabled checked="checked">text          <a class="btn" href="url"  title="title" target="_blank">text</a><div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="/img/default.png"></div><div class="group-image-wrap"><img src="/img/default.png"></div></div></div><pre><code class="mermaid" >ganttdateFormat  YYYY-MM-DDtitle Adding GANTT diagram to mermaidsection A sectionCompleted task            :done,    des1, 2014-01-06,2014-01-08Active task               :active,  des2, 2014-01-09, 3dFuture task               :         des3, after des2, 5dFuture task2               :         des4, after des3, 5d</code></pre><pre><code class=" mermaid">classDiagramClass01 &lt;|-- AveryLongClass : CoolClass03 *-- Class04Class05 o-- Class06Class07 .. Class08Class09 --&gt; C2 : Where am i?Class09 --* C3Class09 --|&gt; Class07Class07 : equals()Class07 : Object[] elementDataClass01 : size()Class01 : int chimpClass01 : int gorillaClass08 &lt;--&gt; C2: Cool label</code></pre><p><img src="/img/avatar.png" alt="个人照片"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Diary</category>
-      
-      <category>Diary1</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2022/06/29/hello-world/"/>
-    <url>/2022/06/29/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Diary11</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>PS3</tag>
-      
-      <tag>Games</tag>
       
     </tags>
     

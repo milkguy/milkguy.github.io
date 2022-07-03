@@ -16,21 +16,26 @@
   <meta name="author" content="贾利凯">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="测试">
-<meta property="og:url" content="http://example.com/2022/06/30/%E6%B5%8B%E8%AF%95/index.html">
+    <meta name="description" content="本文简单介绍了C++类、指针和引用的用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++类、指针和引用">
+<meta property="og:url" content="http://example.com/2022/07/03/C++%E7%B1%BB%E3%80%81%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/index.html">
 <meta property="og:site_name" content="贾利凯的博客">
+<meta property="og:description" content="本文简单介绍了C++类、指针和引用的用法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-29T17:01:28.000Z">
-<meta property="article:modified_time" content="2022-06-30T06:56:46.659Z">
+<meta property="og:image" content="https://img2.baidu.com/it/u=2732260051,406278259&fm=253&fmt=auto&app=138&f=JPG?w=889&h=500">
+<meta property="article:published_time" content="2022-07-03T09:51:00.000Z">
+<meta property="article:modified_time" content="2022-07-03T15:41:07.214Z">
 <meta property="article:author" content="贾利凯">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img2.baidu.com/it/u=2732260051,406278259&fm=253&fmt=auto&app=138&f=JPG?w=889&h=500">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>测试 - 贾利凯的博客</title>
+  <title>C++类、指针和引用 - 贾利凯的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="测试"></span>
+            <span id="subtitle" data-typed-text="C++类、指针和引用"></span>
           
         </div>
 
@@ -228,8 +233,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-30 01:01" pubdate>
-          2022年6月30日 凌晨
+        <time datetime="2022-07-03 17:51" pubdate>
+          2022年7月3日 下午
         </time>
       </span>
     
@@ -240,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          1.2k 字
         
       </span>
     
@@ -251,7 +256,7 @@
         
         
         
-          1 分钟
+          10 分钟
         
       </span>
     
@@ -298,12 +303,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">测试</h1>
+            <h1 style="display: none">C++类、指针和引用</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 天前
+                    本文最后更新于：4 分钟前
                   
                 
               </p>
@@ -311,7 +316,28 @@
             
               <div class="markdown-body">
                 
-                
+                <p>本文简单介绍了C++类、指针和引用的用法</p>
+<span id="more"></span>
+
+<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><h3 id="C-中的类"><a href="#C-中的类" class="headerlink" title="C++中的类"></a>C++中的类</h3><p>类可以将变量和函数完美的打包在一起</p>
+<ul>
+<li>private:里面的内容只能在类里面调用</li>
+<li>public:里面的内容可以在类的外部访问</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span>&#123;<br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-type">int</span> age,height;<br>    <span class="hljs-type">double</span> money;<br>    string books[<span class="hljs-number">100</span>];<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get_money</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> money;<br>    &#125;<br><span class="hljs-keyword">public</span>:<br>    string name;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">say</span><span class="hljs-params">()</span></span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;I&#x27;m&quot;</span>&lt;&lt;name&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">get_age</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> age;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add_money</span><span class="hljs-params">(<span class="hljs-type">double</span> x)</span></span>&#123;<br>        money+=x;<br>    &#125;<br>    <span class="hljs-function">string <span class="hljs-title">get_name</span><span class="hljs-params">()</span></span>&#123;<br>        <span class="hljs-keyword">return</span> name;<br>    &#125;<br>&#125;c;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-comment">//    Person c;</span><br>    c.name=<span class="hljs-string">&quot;abc&quot;</span>;<br><span class="hljs-comment">//    c.age = 18;</span><br>    c.<span class="hljs-built_in">add_money</span>(<span class="hljs-number">1000</span>);<br>    cout&lt;&lt;c.<span class="hljs-built_in">get_name</span>()&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>类中的变量和函数统一被称为类的成员变量</p>
+</blockquote>
+<p>结构体和类的作用是基本是一样的，类中默认是private，结构体中默认是<a href="">public</a></p>
+<p><strong>构造函数：</strong></p>
+<ul>
+<li>构造函数没有类型，函数名称和结构体名称一样</li>
+</ul>
+<p><strong>结构体：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Person</span>&#123;<br>    <span class="hljs-type">int</span> age,height;<br>    <span class="hljs-type">double</span> money;<br>    <span class="hljs-built_in">Person</span>()&#123;&#125;;<br>    <span class="hljs-built_in">Person</span> (<span class="hljs-type">int</span> _age,<span class="hljs-type">int</span> _height)&#123;<br>        age=_age;<br>        height=_height;<br>    &#125;<br>    <span class="hljs-built_in">Person</span>(<span class="hljs-type">int</span> _age,<span class="hljs-type">int</span> _height,<span class="hljs-type">double</span> _money):<span class="hljs-built_in">age</span>(_age),<span class="hljs-built_in">height</span>(_height),<span class="hljs-built_in">money</span>(_money)&#123;&#125;;<br>&#125;;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    Person p;<br>    <span class="hljs-function">Person <span class="hljs-title">p1</span><span class="hljs-params">(<span class="hljs-number">23</span>,<span class="hljs-number">180</span>,<span class="hljs-number">100.0</span>)</span></span>;<br>    Person p2 = &#123;<span class="hljs-number">18</span>,<span class="hljs-number">180</span>&#125;;<br>    cout&lt;&lt;p1.money&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
@@ -319,6 +345,13 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C/">#C++</a>
+      
+    </div>
   
 </div>
 
@@ -330,18 +363,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/30/Go%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" title="Go语言入门">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Go语言入门</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/29/%E3%80%8A%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E3%80%8B/" title="《我的第一篇博客》">
-                        <span class="hidden-mobile">《我的第一篇博客》</span>
+                      <a href="/2022/06/30/Go%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" title="Go语言入门">
+                        <span class="hidden-mobile">Go语言入门</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -424,6 +451,13 @@
 
   
 
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+  });
+</script>
 
 
 
