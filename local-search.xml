@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>《图解密码技术》学习笔记</title>
+    <link href="/2022/08/21/%E3%80%8A%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <url>/2022/08/21/%E3%80%8A%E5%9B%BE%E8%A7%A3%E5%AF%86%E7%A0%81%E6%8A%80%E6%9C%AF%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p>本文讲述了《图解密码技术》一书的学习笔记</p><span id="more"></span>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>密码学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>解读程序是怎样跑起来的</title>
     <link href="/2022/07/28/%E8%A7%A3%E8%AF%BB%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E6%A0%B7%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/"/>
     <url>/2022/07/28/%E8%A7%A3%E8%AF%BB%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E6%A0%B7%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/</url>
@@ -27,7 +46,7 @@
     <link href="/2022/07/12/C++%20STL/"/>
     <url>/2022/07/12/C++%20STL/</url>
     
-    <content type="html"><![CDATA[<p>本文介绍了一些C++常用的STL，容器</p><span id="more"></span><p>a.size() 获取数组长度</p><p>a.empty()  获取数组是否为空</p><h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>vector是一个变长数组</p><p>迭代器就是一个指针</p><p>迭代器一般和a.begin()和a.end()一起使用，区间是左闭右开</p><p>数组<code>vector&lt;int&gt;&#123;1,2,3,4,5&#125;</code></p><p><code>a[0]=a.front()=*a.begin()</code></p><p><code>a.back()=a[a.size()-1]</code> 获取到数组的最后一个元素</p><p>a.push_back(6) &#x2F;&#x2F;时间复杂度是o1</p><p>a.pop_back()删除最后一个元素</p><p>vector要比普通数组速度慢，vector涉及到拷贝的问题</p><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>先进先出，队首出队，队尾入队</p><p>优先队列：每次往外弹出的时候，默认弹出所有数的最大值</p><p>如果自己定义结构体优先队列的话，如果是大根堆，需要重载小于号，如果是小根堆，需要重载大于号</p><p>普通队列是一个循环队列</p><p>栈、队列、优先队列没有clear函数，其他STL容器都有clear函数</p><p>如果没有clear函数，怎样初始化q&#x3D;queue<int>();</p><h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈 stack"></a>栈 stack</h2><h2 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h2><h2 id="位运算和常用库函数"><a href="#位运算和常用库函数" class="headerlink" title="位运算和常用库函数"></a>位运算和常用库函数</h2><p>a&gt;&gt;k&amp;1，取出k位数字 </p><p>a&amp;(~a+1) 取出最后一位1</p><p>(~a+1)&#x3D;-a</p><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2>]]></content>
+    <content type="html"><![CDATA[<p>本文介绍了一些C++常用的STL，容器</p><span id="more"></span><p>a.size() 获取数组长度</p><p>a.empty()  获取数组是否为空</p><h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>vector是一个变长数组</p><p>迭代器就是一个指针</p><p>迭代器一般和a.begin()和a.end()一起使用，区间是左闭右开</p><p>数组<code>vector&lt;int&gt;&#123;1,2,3,4,5&#125;</code></p><p><code>a[0]=a.front()=*a.begin()</code></p><p><code>a.back()=a[a.size()-1]</code> 获取到数组的最后一个元素</p><p>a.push_back(6) &#x2F;&#x2F;时间复杂度是o1</p><p>a.pop_back()删除最后一个元素</p><p>vector要比普通数组速度慢，vector涉及到拷贝的问题</p><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>先进先出，队首出队，队尾入队</p><p>优先队列：每次往外弹出的时候，默认弹出所有数的最大值</p><p>如果自己定义结构体优先队列的话，如果是大根堆，需要重载小于号，如果是小根堆，需要重载大于号</p><p>普通队列是一个循环队列</p><p>栈、队列、优先队列没有clear函数，其他STL容器都有clear函数</p><p>如果没有clear函数，怎样初始化q&#x3D;queue<int>();</p><h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈 stack"></a>栈 stack</h2><h2 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h2><h2 id="位运算和常用库函数"><a href="#位运算和常用库函数" class="headerlink" title="位运算和常用库函数"></a>位运算和常用库函数</h2><p>a&gt;&gt;k&amp;1，取出k位数字 </p><p>a&amp;(~a+1) 取出最后一位1</p><p>(~a+1)&#x3D;-a</p><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串就是字符数组+’\0’ </p><p>数组本身就是一个指针 </p><p>字符数组的输入遇到空格、换行等都会中断，读入一行数据可以使用fgets(s,100,stdin); 读入一行到一个字符数组</p><p>char s[100];</p><p>cin.getline(s,100);</p><p>puts(s)</p><p>cin读入一行数据</p><p>string：字符串 getline(cin,s); 把一行读入到一个string里</p><p>char数组用c语言方式读入的时候不需要加&amp;符号</p>]]></content>
     
     
     
