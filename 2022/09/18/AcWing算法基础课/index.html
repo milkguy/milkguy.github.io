@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="贾利凯">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本文讲述了北大闫学灿算法基础课学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AcWing算法基础课刷题">
+<meta property="og:url" content="http://example.com/2022/09/18/AcWing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AF%BE/index.html">
+<meta property="og:site_name" content="贾利凯的博客">
+<meta property="og:description" content="本文讲述了北大闫学灿算法基础课学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fzhengxin-pub.cdn.bcebos.com%2Fmark%2Fce53345726a5cbf11f50c030df025b00_fullsize.jpeg&refer=http%3A%2F%2Fzhengxin-pub.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666096701&t=746cedca899f9a8bac3f825c3424ac52">
+<meta property="article:published_time" content="2022-09-18T12:33:00.000Z">
+<meta property="article:modified_time" content="2022-11-10T15:02:56.258Z">
+<meta property="article:author" content="贾利凯">
+<meta property="article:tag" content="算法题">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fzhengxin-pub.cdn.bcebos.com%2Fmark%2Fce53345726a5cbf11f50c030df025b00_fullsize.jpeg&refer=http%3A%2F%2Fzhengxin-pub.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1666096701&t=746cedca899f9a8bac3f825c3424ac52">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>AcWing算法基础课刷题 - 贾利凯的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"qAYPMz0NNrEXozN9bdO5vFh9-gzGzoHsz","app_key":"Ht04GXxbCgOIEJ3YwdwXw923","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>JLK</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="AcWing算法基础课刷题"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        贾利凯
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-18 20:33" pubdate>
+          2022年9月18日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          58 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">AcWing算法基础课刷题</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：3 天前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>本文讲述了北大闫学灿算法基础课学习笔记</p>
+<span id="more"></span>
+
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="快速排序（以j为划分条件）"><a href="#快速排序（以j为划分条件）" class="headerlink" title="快速排序（以j为划分条件）"></a>快速排序（以j为划分条件）</h3><ul>
+<li>快速排序的主要思想是分治</li>
+<li>步骤：<ul>
+<li>找到分界点</li>
+<li>使用双指针移动，把区间划分成两部分，左边的区间都小于等于x，右边的区间都大于等于x</li>
+<li>递归处理左右两边</li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.acwing.com/solution/content/16777/">可行性分析和边界条件证明</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;time.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e5</span>+<span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> n;<br><span class="hljs-type">int</span> q[N];<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">quick_sort</span><span class="hljs-params">(<span class="hljs-type">int</span> q[],<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(l&gt;=r)<span class="hljs-keyword">return</span>;<br>    <span class="hljs-built_in">srand</span>(<span class="hljs-built_in">time</span>(<span class="hljs-literal">NULL</span>));<br>    <span class="hljs-type">int</span> s=<span class="hljs-built_in">rand</span>()%(r-l)+l;<br>    <span class="hljs-type">int</span> x=q[s],i=l<span class="hljs-number">-1</span>,j=r+<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(i&lt;j)&#123;<br>        <span class="hljs-keyword">do</span> i++;<span class="hljs-keyword">while</span>(q[i]&lt;x);<br>        <span class="hljs-keyword">do</span> j--;<span class="hljs-keyword">while</span>(q[j]&gt;x);<br>        <span class="hljs-keyword">if</span>(i&lt;j)<span class="hljs-built_in">swap</span>(q[i],q[j]);<br>    &#125;<br>    <span class="hljs-built_in">quick_sort</span>(q,l,j);<br>    <span class="hljs-built_in">quick_sort</span>(q,j+<span class="hljs-number">1</span>,r);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;q[i]);<br>    <span class="hljs-built_in">quick_sort</span>(q,<span class="hljs-number">0</span>,n<span class="hljs-number">-1</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,q[i]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="归并排序（双指针算法）"><a href="#归并排序（双指针算法）" class="headerlink" title="归并排序（双指针算法）"></a>归并排序（双指针算法）</h3><ul>
+<li><p>归并排序的思想也是分治</p>
+</li>
+<li><p>步骤</p>
+<ul>
+<li>归并排序的思想是从中间分开，所以先确定分界点mid&#x3D;l+r&gt;&gt;1;</li>
+<li>递归处理左右两部分</li>
+<li>使用双指针算法，用两个指针从左右两段分别开始遍历，按照从小到大的顺序放到新数组里</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">1e6</span>+<span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> n;<br><span class="hljs-type">int</span> q[N],tmp[N];<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(<span class="hljs-type">int</span> q[],<span class="hljs-type">int</span> l ,<span class="hljs-type">int</span> r)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(l&gt;=r)<span class="hljs-keyword">return</span>;<br>    <span class="hljs-type">int</span> mid=l+r&gt;&gt;<span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">merge_sort</span>(q,l,mid);<br>    <span class="hljs-built_in">merge_sort</span>(q,mid+<span class="hljs-number">1</span>,r);<br>    <span class="hljs-type">int</span> i=l,j=mid+<span class="hljs-number">1</span>,k=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)&#123;<br>        <span class="hljs-keyword">if</span>(q[i]&lt;q[j])tmp[k++]=q[i++];<br>        <span class="hljs-keyword">else</span> tmp[k++]=q[j++];<br>    &#125;<br>    <span class="hljs-keyword">while</span>(i&lt;=mid)tmp[k++]=q[i++];<br>    <span class="hljs-keyword">while</span>(j&lt;=r)tmp[k++]=q[j++];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l,j=<span class="hljs-number">0</span>;i&lt;=r;i++,j++)&#123;<br>        q[i]=tmp[j];<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;q[i]);<br>    <span class="hljs-built_in">merge_sort</span>(q,<span class="hljs-number">0</span>,n<span class="hljs-number">-1</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,q[i]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h2><h3 id="整数二分"><a href="#整数二分" class="headerlink" title="整数二分"></a>整数二分</h3><ul>
+<li><p>思想：二分的主要作用是找边界条件，二分和单调性没有关系，有单调性的题目一定可以用二分来做，但是没有单调性的题目，也可能会用二分来做，二分通常用来解决极值问题。</p>
+</li>
+<li><p>步骤：</p>
+<ul>
+<li>先把区间一分为二，通过判断mid是否在条件范围来判断来选择不同的模版<ul>
+<li>找最大值：如果q[mid]&lt;&#x3D;x，l&#x3D;mid，否则r&#x3D;mid+1，这时候要注意mid&#x3D;l+r+1&gt;&gt;1</li>
+<li>找最小值：如果q[mid]&gt;&#x3D;x，r&#x3D;mid，否则l&#x3D;mid</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/791/">题目</a></p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">1e6</span>+<span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> n;<br><span class="hljs-type">int</span> q[N],tmp[N];<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">merge_sort</span><span class="hljs-params">(<span class="hljs-type">int</span> q[],<span class="hljs-type">int</span> l ,<span class="hljs-type">int</span> r)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(l&gt;=r)<span class="hljs-keyword">return</span>;<br>    <span class="hljs-type">int</span> mid=l+r&gt;&gt;<span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">merge_sort</span>(q,l,mid);<br>    <span class="hljs-built_in">merge_sort</span>(q,mid+<span class="hljs-number">1</span>,r);<br>    <span class="hljs-type">int</span> i=l,j=mid+<span class="hljs-number">1</span>,k=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r)&#123;<br>        <span class="hljs-keyword">if</span>(q[i]&lt;q[j])tmp[k++]=q[i++];<br>        <span class="hljs-keyword">else</span> tmp[k++]=q[j++];<br>    &#125;<br>    <span class="hljs-keyword">while</span>(i&lt;=mid)tmp[k++]=q[i++];<br>    <span class="hljs-keyword">while</span>(j&lt;=r)tmp[k++]=q[j++];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=l,j=<span class="hljs-number">0</span>;i&lt;=r;i++,j++)&#123;<br>        q[i]=tmp[j];<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;q[i]);<br>    <span class="hljs-built_in">merge_sort</span>(q,<span class="hljs-number">0</span>,n<span class="hljs-number">-1</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,q[i]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="浮点数二分"><a href="#浮点数二分" class="headerlink" title="浮点数二分"></a>浮点数二分</h3><ul>
+<li><p>浮点数二分要比整数二分简单很多，不需要考虑太多边界情况</p>
+</li>
+<li><p>步骤</p>
+<ul>
+<li>浮点数判断的话，很难精确到具体的数值范围，所以只能用粗略估计都方法，一般认为当r-l&lt;1e-8时，就l&#x3D;&#x3D;r</li>
+<li>浮点数二分只有一种情况，就是当q[mid]&lt;&#x3D;x l&#x3D;mid，否则r&#x3D;mid</li>
+</ul>
+</li>
+<li><p>题目：求一个数的平方根</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">double</span> x;<br>    cin&gt;&gt;x;<br>    <span class="hljs-type">double</span> l=<span class="hljs-number">0</span>,r=x;<br>    <span class="hljs-keyword">while</span>(r-l&gt;<span class="hljs-number">1e-8</span>)&#123;<br>        <span class="hljs-type">double</span> mid=(l+r)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span>(mid*mid&lt;=x)l=mid;<br>        <span class="hljs-keyword">else</span> r=mid;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.6lf\n&quot;</span>,l);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="高精度运算"><a href="#高精度运算" class="headerlink" title="高精度运算"></a>高精度运算</h2><h3 id="高精度加法"><a href="#高精度加法" class="headerlink" title="高精度加法"></a>高精度加法</h3><ul>
+<li>思想：高精度的思想是把大整数用字符串来存储，</li>
+<li>步骤：<ul>
+<li>首先用字符串输入两个大整数a,b，将字符串数组的每一位存储到一个vector里，为了方便计算，存储到时候要倒序存储</li>
+<li>定义一个整数t用来存储每一位相加之后的结果，如果当前位数小于第一个整数的长度，则t+&#x3D;A[i]，如果当前位数小于第二个整数，则t+&#x3D;B[i]，将t取余10的余数存到新的数组C里，表示相加之后的结果，t&#x2F;&#x3D;10;</li>
+<li>如果计算完之后t还不为0，说明t还有剩余，最高位进1，数组C里再插入一个1</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br>vector&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">add</span>(vector&lt;<span class="hljs-type">int</span>&gt;&amp;A,vector&lt;<span class="hljs-type">int</span>&gt;&amp;B)&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt;C;<br>    <span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;A.<span class="hljs-built_in">size</span>()||i&lt;B.<span class="hljs-built_in">size</span>();i++)&#123;<br>        <span class="hljs-keyword">if</span>(i&lt;A.<span class="hljs-built_in">size</span>())t+=A[i];<br>        <span class="hljs-keyword">if</span>(i&lt;B.<span class="hljs-built_in">size</span>())t+=B[i];<br>        C.<span class="hljs-built_in">push_back</span>(t%<span class="hljs-number">10</span>);<br>        t/=<span class="hljs-number">10</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(t)C.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">return</span> C;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string a,b;<br>    vector&lt;<span class="hljs-type">int</span>&gt;A,B;<br>    cin&gt;&gt;a&gt;&gt;b;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=a.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)A.<span class="hljs-built_in">push_back</span>(a[i]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=b.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)B.<span class="hljs-built_in">push_back</span>(b[i]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-keyword">auto</span> c=<span class="hljs-built_in">add</span>(A,B);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=c.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,c[i]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="高精度减法"><a href="#高精度减法" class="headerlink" title="高精度减法"></a>高精度减法</h3><ul>
+<li>思想：高精度减法和高精度加法思想一致，都是把大整数转化成字符串进行运算</li>
+<li>步骤：<ul>
+<li>首先用字符串输入两个大正整数a,b，将字符串数组的每一位存储到一个vector里，为了方便计算，存储到时候要倒序存储</li>
+<li>高精度减法首先需要判断两个数的大小，如果A&gt;B，则sub(A,B)，如果A&lt;B，则sub(B,A)，输出之前先输出一个负号，所以要手写一个比较函数cmp，比较两个数的大小，比较两个数大小的时候首先是比较位数，如果A的位数大于B的位数，则A&gt;B，如果位数相等，则从最高位依次比较A的每一位和B的每一位的大小，如果A的高位大于B的高位，则A&gt;B</li>
+<li>减法运算首先定义一个r，用来表示相减之后的结果，刚开始r&#x3D;0，r&#x3D;A[i]-r，如果B的当前位数还有数，则用r-B[i]，用一个数组C来计算存储之后的结果，C.push_back((r+10)%10)，这个数不论正负，这样都能存储相减之后的正确结果，如果r&lt;0，则向上一位借一个1，r&#x3D;1，否则r&#x3D;0;</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;A,vector&lt;<span class="hljs-type">int</span>&gt;B)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(A.<span class="hljs-built_in">size</span>()!=B.<span class="hljs-built_in">size</span>())<span class="hljs-keyword">return</span> A.<span class="hljs-built_in">size</span>()&gt;B.<span class="hljs-built_in">size</span>();<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=A.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<span class="hljs-keyword">if</span>(A[i]!=B[i])<span class="hljs-keyword">return</span> A[i]&gt;B[i];<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br>vector&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">sub</span>(vector&lt;<span class="hljs-type">int</span>&gt;&amp;A,vector&lt;<span class="hljs-type">int</span>&gt;&amp;B)&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt;C;<br>    <span class="hljs-type">int</span> r;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>,r=<span class="hljs-number">0</span>;i&lt;A.<span class="hljs-built_in">size</span>();i++)&#123;<br>        r=A[i]-r;<br>        <span class="hljs-keyword">if</span>(i&lt;B.<span class="hljs-built_in">size</span>())r-=B[i];<br>        C.<span class="hljs-built_in">push_back</span>((r+<span class="hljs-number">10</span>)%<span class="hljs-number">10</span>);<br>        <span class="hljs-keyword">if</span>(r&lt;<span class="hljs-number">0</span>)r=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> r=<span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">while</span>(C.<span class="hljs-built_in">size</span>()&gt;<span class="hljs-number">1</span>&amp;&amp;C.<span class="hljs-built_in">back</span>()==<span class="hljs-number">0</span>)C.<span class="hljs-built_in">pop_back</span>();<br>    <span class="hljs-keyword">return</span> C;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string a,b;<br>    vector&lt;<span class="hljs-type">int</span>&gt;A,B;<br>    cin&gt;&gt;a&gt;&gt;b;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=a.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)A.<span class="hljs-built_in">push_back</span>(a[i]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=b.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)B.<span class="hljs-built_in">push_back</span>(b[i]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-keyword">auto</span> c=<span class="hljs-built_in">sub</span>(A,B);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">cmp</span>(A,B))&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=c.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,c[i]);<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;-&quot;</span>);<br>        c=<span class="hljs-built_in">sub</span>(B,A);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=c.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,c[i]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="高精度乘法"><a href="#高精度乘法" class="headerlink" title="高精度乘法"></a>高精度乘法</h3><ul>
+<li>思想：一个大整数乘一个整数，思想也是把大整数转换成字符串，用一个变量t来表示进位，大整数的每一位与另一个数相乘，余数存到数组c里，进位加到下一位运算里</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br>vector&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">mul</span>(vector&lt;<span class="hljs-type">int</span>&gt;&amp;A,<span class="hljs-type">int</span> b)&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt;C;<br>    <span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;A.<span class="hljs-built_in">size</span>();i++)&#123;<br>        t+=A[i]*b;<br>        C.<span class="hljs-built_in">push_back</span>(t%<span class="hljs-number">10</span>);<br>        t/=<span class="hljs-number">10</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(t)C.<span class="hljs-built_in">push_back</span>(t);<br>    <span class="hljs-keyword">while</span>(C.<span class="hljs-built_in">size</span>()&gt;<span class="hljs-number">1</span>&amp;&amp;C.<span class="hljs-built_in">back</span>()==<span class="hljs-number">0</span>)C.<span class="hljs-built_in">pop_back</span>();<br>    <span class="hljs-keyword">return</span> C;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string a;<br>    vector&lt;<span class="hljs-type">int</span>&gt;A;<br>    <span class="hljs-type">int</span> b;<br>    cin &gt;&gt;a&gt;&gt;b;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=a.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)A.<span class="hljs-built_in">push_back</span>(a[i]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-keyword">auto</span> c = <span class="hljs-built_in">mul</span>(A,b);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=c.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,c[i]);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="高精度除法"><a href="#高精度除法" class="headerlink" title="高精度除法"></a>高精度除法</h3><ul>
+<li>思想：高精度除法是用一个大整数A除以一个整数b，余数为r，思想也是把大整数转化成字符串，用r来表示余数，余数初始化为0，每次用余数*10+大整数A的每一位，表示当前的除数，将除完以后的结果存储到c中，将余数赋值给r，为了保持和前面的模版输入输出一致，数组c要进行反转</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br>vector&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">div</span>(vector&lt;<span class="hljs-type">int</span>&gt;&amp;A,<span class="hljs-type">int</span> b,<span class="hljs-type">int</span> &amp;r)&#123;<br>    vector&lt;<span class="hljs-type">int</span>&gt;C;<br>    r=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=A.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>        r=A[i]+r*<span class="hljs-number">10</span>;<br>        C.<span class="hljs-built_in">push_back</span>(r/b);<br>        r%=b;<br>    &#125;<br>    <span class="hljs-built_in">reverse</span>(C.<span class="hljs-built_in">begin</span>(),C.<span class="hljs-built_in">end</span>());<br>    <span class="hljs-keyword">while</span>(C.<span class="hljs-built_in">size</span>()&gt;<span class="hljs-number">1</span>&amp;&amp;C.<span class="hljs-built_in">back</span>()==<span class="hljs-number">0</span>)C.<span class="hljs-built_in">pop_back</span>();<br>    <span class="hljs-keyword">return</span> C;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    string a;<br>    vector&lt;<span class="hljs-type">int</span>&gt;A;<br>    <span class="hljs-type">int</span> b;<br>    cin&gt;&gt;a&gt;&gt;b;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=a.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)A.<span class="hljs-built_in">push_back</span>(a[i]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>    <span class="hljs-type">int</span> r;<br>    <span class="hljs-keyword">auto</span> c=<span class="hljs-built_in">div</span>(A,b,r);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=c.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,c[i]);<br>    cout&lt;&lt;endl&lt;&lt;r&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>前缀和：</p>
+<ul>
+<li>怎么求</li>
+<li>作用：算一段区间内一段数的和</li>
+<li>前缀和的初始化：s[i]&#x3D;s[i-1]+a[i]，注意i从1开始</li>
+<li>区间和的求和公式  ：l~r的和等于s[r]-s[l-1];</li>
+</ul>
+<p>二维：按照面积算</p>
+<p><img src="/../picture/image-20221102215603513.png" srcset="/img/loading.gif" lazyload alt="image-20221102215603513"></p>
+<p>前缀和的初始化：s[i] [j]&#x3D;s[i-1] [j]+s[i] [j-1]-s[i-1] [j-1]+a[i] [j] </p>
+<p>子矩阵求和公式：[x1,y1]到[x2,y2]的区间和为s[x2] [y2]-s[x1-1] [y2]-s[x2] [y1-1]+s[x1-1] [y1-1]</p>
+<p>前缀和和差分是逆运算</p>
+<h2 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h2><p>a数组是b数组的前缀和，b数组就是a数组的差分</p>
+<p>O(n):B—&gt;A</p>
+<p>O(1)时间操作原数组</p>
+<p>b[l]+c，b[r+1]-c</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95%E9%A2%98/">#算法题</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/10/25/Git/" title="Git使用指南">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Git使用指南</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/26/%E5%89%91%E6%8C%87offer%E5%88%B7%E9%A2%98/" title="剑指offer刷题">
+                        <span class="hidden-mobile">剑指offer刷题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'milkguy/comment-utterance');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

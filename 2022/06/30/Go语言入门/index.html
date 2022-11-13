@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-a7f5f61e231b5e5d9ea3125426bb7212_1440w.jpg%3Fsource%3D172ae18b&refer=http%3A%2F%2Fpic1.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1659434088&t=8bd627601a767fe6c3bbc5cd485fe40a">
 <meta property="article:published_time" content="2022-06-30T08:34:00.000Z">
-<meta property="article:modified_time" content="2022-09-18T11:38:12.117Z">
+<meta property="article:modified_time" content="2022-11-10T08:01:31.107Z">
 <meta property="article:author" content="贾利凯">
 <meta property="article:tag" content="Go">
 <meta name="twitter:card" content="summary_large_image">
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k 字
+          14k 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          97 分钟
+          114 分钟
         
       </span>
     
@@ -308,7 +308,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：几秒前
+                    本文最后更新于：3 天前
                   
                 
               </p>
@@ -331,6 +331,7 @@
 <li><p>批量声明</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> (<br>	a <span class="hljs-type">string</span><br>	b <span class="hljs-type">int</span><br>)<br></code></pre></td></tr></table></figure>
 </li>
+<li></li>
 <li><p>申明同时指定初始值</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> name <span class="hljs-type">string</span>=<span class="hljs-string">&quot;milkboy&quot;</span><br><span class="hljs-keyword">var</span> age <span class="hljs-type">int</span> =<span class="hljs-number">18</span><br></code></pre></td></tr></table></figure>
 </li>
@@ -386,7 +387,7 @@
 <h3 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h3><ul>
 <li><code>uint8</code>类型，或者叫 byte 型，代表一个<code>ASCII码</code>字符。</li>
 <li><code>rune</code>类型，代表一个 <code>UTF-8字符</code>。</li>
-<li>遍历中英文结合的字符串时，尽量使用for range遍历</li>
+<li><strong>遍历中英文结合的字符串时，尽量使用for range遍历</strong></li>
 <li>由于字符串底层使用的是[ ]byte和[ ]rune，所以修改字符串的时候需要先转换成[ ]byte和[ ]rune来进行修改</li>
 </ul>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">changeString</span><span class="hljs-params">()</span></span> &#123;<br>	s1 := <span class="hljs-string">&quot;big&quot;</span><br>	<span class="hljs-comment">// 强制类型转换</span><br>	byteS1 := []<span class="hljs-type">byte</span>(s1)<br>	byteS1[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;p&#x27;</span><br>	fmt.Println(<span class="hljs-type">string</span>(byteS1))<br><br>	s2 := <span class="hljs-string">&quot;白萝卜&quot;</span><br>	runeS2 := []<span class="hljs-type">rune</span>(s2)<br>	runeS2[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;红&#x27;</span><br>	fmt.Println(<span class="hljs-type">string</span>(runeS2))<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -587,7 +588,7 @@
 </blockquote>
 <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h3><ul>
 <li>数组的长度一旦定义，就不能改变，在go语言中，数组的长度也是数组类型的一部分</li>
-<li>定义数组时，可以使用三个点来推测数组长度，例如：<code>var a=[...]&#123;1,2,3&#125;</code></li>
+<li><strong>定义数组时，可以使用三个点来推测数组长度，例如：<code>var a=[...]&#123;1,2,3&#125;</code></strong></li>
 <li>数组声明时可以根据索引来声明，例如：<code>var a=[...]&#123;1:2,2:3,3:4&#125;</code>，数组的值为<code>[0,2,3,4]</code></li>
 </ul>
 <h3 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h3><ul>
@@ -595,7 +596,7 @@
 <li>for range遍历</li>
 </ul>
 <blockquote>
-<p>数组是值类型，赋值和传参会复制整个数组，改变副本的值，不会改变本身的值。</p>
+<p><strong>数组是值类型，赋值和传参会复制整个数组，改变副本的值，不会改变本身的值。</strong></p>
 </blockquote>
 <h2 id="切片-Slice"><a href="#切片-Slice" class="headerlink" title="切片 Slice"></a>切片 Slice</h2><p>切片的本质是数组，它是基于数组类型做的一层封装。它非常灵活，支持自动扩容。</p>
 <p>切片初始化以后，就不为空了，切片有自己的长度和容量，可以使用<code>len(a)</code>获取切片的长度，使用<code>cap(a)</code>获取切片的容量</p>
@@ -755,7 +756,67 @@
 <blockquote>
 <p>由于<code>defer</code>语句延迟调用的特性，所以<code>defer</code>语句能非常方便的处理资源释放问题。比如：资源清理、文件关闭、解锁及记录时间等。</p>
 </blockquote>
-<h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h2>
+<h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h2><p><img src="/../picture/image-20221010152155504.png" srcset="/img/loading.gif" lazyload alt="image-20221010152155504"></p>
+<h2 id="匿名函数如果是闭包的话，会造成并发问题"><a href="#匿名函数如果是闭包的话，会造成并发问题" class="headerlink" title="匿名函数如果是闭包的话，会造成并发问题"></a>匿名函数如果是闭包的话，会造成并发问题</h2><p>URL: <a target="_blank" rel="noopener" href="https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15427_2022092813&amp;query_date=20220928&amp;country_id=0">https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15427_2022092813&amp;query_date=20220928&amp;country_id=0</a></p>
+<p>URL: <a target="_blank" rel="noopener" href="https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15427_2022092813,15427_2022092814&amp;query_date=20220928&amp;country_id=0">https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15427_2022092813,15427_2022092814&amp;query_date=20220928&amp;country_id=0</a></p>
+<p>URL: <a target="_blank" rel="noopener" href="https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15428_2022092814&amp;query_date=20220928&amp;country_id=0">https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15428_2022092814&amp;query_date=20220928&amp;country_id=0</a></p>
+<p>URL: <a target="_blank" rel="noopener" href="https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15431_2022092811&amp;query_date=20220928&amp;country_id=0">https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15431_2022092811&amp;query_date=20220928&amp;country_id=0</a></p>
+<p>URL: <a target="_blank" rel="noopener" href="https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15432_2022092810&amp;query_date=20220928&amp;country_id=0">https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15432_2022092810&amp;query_date=20220928&amp;country_id=0</a></p>
+<p>URL: <a target="_blank" rel="noopener" href="https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15434_2022092811&amp;query_date=20220928&amp;country_id=0">https://reservation.bupt.edu.cn/index.php/Wechat/Booking/confirm_booking?area_id=5983&amp;td_id=15434_2022092811&amp;query_date=20220928&amp;country_id=0</a></p>
+<p><img src="/../picture/image-20220928172145012.png" srcset="/img/loading.gif" lazyload alt="image-20220928172145012"></p>
+<h2 id="Gin"><a href="#Gin" class="headerlink" title="Gin"></a>Gin</h2><p>Gin框架模版渲染自定义函数修改</p>
+<p>静态文件加载</p>
+<p>html模版文件加载</p>
+<h2 id="Gin渲染json"><a href="#Gin渲染json" class="headerlink" title="Gin渲染json"></a>Gin渲染json</h2><p>map</p>
+<p>gin.H</p>
+<p>结构体：结构体字段名必须大写，可以使用tag来做定制化操作</p>
+<h2 id="Gin获取query-string"><a href="#Gin获取query-string" class="headerlink" title="Gin获取query string"></a>Gin获取query string</h2><p>GET请求获取url问号后面的query string参数</p>
+<p>三个方法</p>
+<p>c.Query</p>
+<p>c.DefaultQuery</p>
+<p>c.getQuery</p>
+<h2 id="Gin-form参数"><a href="#Gin-form参数" class="headerlink" title="Gin form参数"></a>Gin form参数</h2><p>c.PostForm，要和html页面中的post请求中input输入框中的id对应</p>
+<p>c.DefaultPostForm</p>
+<p>c.GetPostForm</p>
+<h2 id="Gin-url路径参数"><a href="#Gin-url路径参数" class="headerlink" title="Gin url路径参数"></a>Gin url路径参数</h2><p>c.Param</p>
+<p>注意url的匹配不要冲突</p>
+<h2 id="Gin-参数绑定"><a href="#Gin-参数绑定" class="headerlink" title="Gin 参数绑定"></a>Gin 参数绑定</h2><p>使用结构体，结构体里面tag标签用form，这里用到了go语言的反射</p>
+<p>c.ShouldBind 参数传递是指针，query string ,form表单里的数据，json格式的数据，都可以使用</p>
+<p>c.ShouldBind作用，遍历结构体，拿结构体里的值去queryString或者post请求的数据里找</p>
+<h2 id="Gin-文件上传"><a href="#Gin-文件上传" class="headerlink" title="Gin 文件上传"></a>Gin 文件上传</h2><p>c.FormFile  &#x2F;&#x2F;上传文件</p>
+<p>c.SaveUploadedFile &#x2F;&#x2F;保存文件</p>
+<h2 id="Gin-重定向"><a href="#Gin-重定向" class="headerlink" title="Gin 重定向"></a>Gin 重定向</h2><p>c.Redirect</p>
+<h2 id="Gin路由与路由组"><a href="#Gin路由与路由组" class="headerlink" title="Gin路由与路由组"></a>Gin路由与路由组</h2><p>万能请求方法路由r.Any</p>
+<p>找不到方法路由：r.NoRoute</p>
+<p>路由组：videoGroup:&#x3D;r.Group(“&#x2F;video”)</p>
+<p>​			  videoGroup.GET(“&#x2F;index”,func(c *gin.Context){})</p>
+<h2 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h2><p>handle</p>
+<p>c.Next()</p>
+<p>r.Use(m1)</p>
+<p><img src="/../picture/image-20221101100335123.png" srcset="/img/loading.gif" lazyload alt="image-20221101100335123"></p>
+<p>一般写中间件的时候都当作闭包来写</p>
+<p>c.set() &#x2F;&#x2F;跨中间件存取值</p>
+<p>c.get()</p>
+<h2 id="GORM"><a href="#GORM" class="headerlink" title="GORM"></a>GORM</h2><p>Object Relational Mapping</p>
+<p>连接数据库</p>
+<p>db,err:&#x3D;gorm.Open</p>
+<p>&#x2F;&#x2F;映射关系</p>
+<p>db.AutoMigrate</p>
+<p>创建：db.create</p>
+<p>查询：db.First(&amp;u)</p>
+<p>更改：db.Model(&amp;u).update()</p>
+<p>删除：db.delete</p>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs go">db.NewRecord(&amp;u) 判断主键是否为空<br></code></pre></td></tr></table></figure>
+
+<p>默认值会覆盖零值，两种解决办法，一种是用指针，另一种是用sql.NullString包</p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>db.First(&amp;u) &#x2F;&#x2F;主键是数字</p>
+<p>查询的时候不带零值，想要查询零值的话，创建的时候就得使用零值</p>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>使用结构体更新时，只会更新非零字段，如果想要更新全部字段，请使用map[string]interface{}{</p>
+<p>}</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>删除操作必须指定主键，如果主键为空，gorm则会删除所有记录</p>
+<p>删除操作是软删除</p>
+<p>不创建gorm.Model就没有软删除了</p>
+
                 
               </div>
             
