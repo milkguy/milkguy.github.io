@@ -16,26 +16,27 @@
   <meta name="author" content="贾利凯">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本文介绍了一些C++常用的STL，容器">
+    <meta name="description" content="本章节讲述了计算机网络学习过程中的学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ STL">
-<meta property="og:url" content="http://example.com/2022/07/12/C++%20STL/index.html">
+<meta property="og:title" content="计算机网络学习笔记">
+<meta property="og:url" content="http://example.com/2022/12/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="贾利凯的博客">
-<meta property="og:description" content="本文介绍了一些C++常用的STL，容器">
+<meta property="og:description" content="本章节讲述了计算机网络学习过程中的学习笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img2.baidu.com/it/u=2732260051,406278259&fm=253&fmt=auto&app=138&f=JPG?w=889&h=500">
-<meta property="article:published_time" content="2022-07-12T03:48:00.000Z">
-<meta property="article:modified_time" content="2022-08-25T13:37:05.278Z">
+<meta property="og:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
+<meta property="article:published_time" content="2022-12-29T06:47:24.000Z">
+<meta property="article:modified_time" content="2023-02-03T23:46:39.579Z">
 <meta property="article:author" content="贾利凯">
-<meta property="article:tag" content="C++">
+<meta property="article:tag" content="计算机基础">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://img2.baidu.com/it/u=2732260051,406278259&fm=253&fmt=auto&app=138&f=JPG?w=889&h=500">
+<meta name="twitter:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>C++ STL - 贾利凯的博客</title>
+  <title>计算机网络学习笔记 - 贾利凯的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C++ STL"></span>
+            <span id="subtitle" data-typed-text="计算机网络学习笔记"></span>
           
         </div>
 
@@ -233,8 +234,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-12 11:48" pubdate>
-          2022年7月12日 中午
+        <time datetime="2022-12-29 14:47" pubdate>
+          2022年12月29日 下午
         </time>
       </span>
     
@@ -245,7 +246,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          998 字
+          131 字
         
       </span>
     
@@ -256,7 +257,7 @@
         
         
         
-          9 分钟
+          2 分钟
         
       </span>
     
@@ -303,12 +304,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">C++ STL</h1>
+            <h1 style="display: none">计算机网络学习笔记</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：3 个月前
+                    本文最后更新于：8 小时前
                   
                 
               </p>
@@ -316,59 +317,16 @@
             
               <div class="markdown-body">
                 
-                <p>本文介绍了一些C++常用的STL，容器</p>
+                <p>本章节讲述了计算机网络学习过程中的学习笔记</p>
 <span id="more"></span>
 
-<p>a.size() 获取数组长度</p>
-<p>a.empty()  获取数组是否为空</p>
-<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>vector是一个变长数组</p>
-<p>迭代器就是一个指针</p>
-<p>迭代器一般和a.begin()和a.end()一起使用，区间是左闭右开</p>
-<p>数组<code>vector&lt;int&gt;&#123;1,2,3,4,5&#125;</code></p>
-<p><code>a[0]=a.front()=*a.begin()</code></p>
-<p><code>a.back()=a[a.size()-1]</code> 获取到数组的最后一个元素</p>
-<p>a.push_back(6) &#x2F;&#x2F;时间复杂度是o1</p>
-<p>a.pop_back()删除最后一个元素</p>
-<p>vector要比普通数组速度慢，vector涉及到拷贝的问题</p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>先进先出，队首出队，队尾入队</p>
-<p>优先队列：每次往外弹出的时候，默认弹出所有数的最大值</p>
-<p>如果自己定义结构体优先队列的话，如果是大根堆，需要重载小于号，如果是小根堆，需要重载大于号</p>
-<p>普通队列是一个循环队列</p>
-<p>栈、队列、优先队列没有clear函数，其他STL容器都有clear函数</p>
-<p>如果没有clear函数，怎样初始化q&#x3D;queue<int>();</p>
-<h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈 stack"></a>栈 stack</h2><h2 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h2><h2 id="位运算和常用库函数"><a href="#位运算和常用库函数" class="headerlink" title="位运算和常用库函数"></a>位运算和常用库函数</h2><p>a&gt;&gt;k&amp;1，取出k位数字 </p>
-<p>a&amp;(~a+1) 取出最后一位1</p>
-<p>(~a+1)&#x3D;-a</p>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串就是字符数组+’\0’ </p>
-<p>数组本身就是一个指针 </p>
-<p>字符数组的输入遇到空格、换行等都会中断，读入一行数据可以使用fgets(s,100,stdin); 读入一行到一个字符数组</p>
-<p>char s[100];</p>
-<p>cin.getline(s,100);</p>
-<p>puts(s)</p>
-<p>cin读入一行数据</p>
-<p>string：字符串 getline(cin,s); 把一行读入到一个string里</p>
-<p>char数组用c语言方式读入的时候不需要加&amp;符号</p>
-<p>char数组：</p>
-<ul>
-<li>数组名称就是地址</li>
-<li>scanf(“%s”,s);</li>
-<li>cin&gt;&gt;s+1；从下标1开始</li>
-<li>cout&lt;&lt;s;</li>
-<li>printf(“%s”,s);</li>
-<li>gets &#x2F;&#x2F;淘汰</li>
-<li>fgets(s,1000,stdin);</li>
-<li>cin.getline(s,100);</li>
-<li>puts(s)</li>
-<li>strlen(s) &#x2F;&#x2F;获取字符串的长度，不包括’\0’</li>
-<li>strcmp(s) &#x2F;&#x2F;比较字典序的大小，通过返回值来判断</li>
+<p>计算机网络已经由一种通信基础设施发展成为一种重要的信息服务基础设施。</p>
+<h2 id="网络基础概念"><a href="#网络基础概念" class="headerlink" title="网络基础概念"></a>网络基础概念</h2><ul>
+<li>网络：网络是由若干结点和连接这些结点的链路组成</li>
+<li>互联网：多个网络通过路由器连接起来，构成的范围更大的网络就是互联网</li>
+<li>英特网：世界上最大的互联网络</li>
 </ul>
-<blockquote>
-<p>输入输出字典序问题一般和贪心问题来一起解决</p>
-</blockquote>
-<p>string:</p>
-<ul>
-<li>getline(cin,s);</li>
-</ul>
+<p><img src="/../../../source/picture/image-20221229153317391.png" srcset="/img/loading.gif" lazyload alt="ISP多层网络结构"></p>
 
                 
               </div>
@@ -377,11 +335,24 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/C/">#C++</a>
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">#计算机基础</a>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">#计算机网络</a>
       
     </div>
   
@@ -390,29 +361,6 @@
 
               
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2022/07/28/%E8%A7%A3%E8%AF%BB%E7%A8%8B%E5%BA%8F%E6%98%AF%E6%80%8E%E6%A0%B7%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84/" title="解读程序是怎样跑起来的">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">解读程序是怎样跑起来的</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2022/07/03/C++%E7%B1%BB%E3%80%81%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8/" title="C++类、指针和引用">
-                        <span class="hidden-mobile">C++类、指针和引用</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
