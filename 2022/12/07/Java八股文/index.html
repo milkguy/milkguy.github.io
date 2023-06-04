@@ -1,0 +1,868 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="milkboy">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="面试常见算法题刷题指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java八股文">
+<meta property="og:url" content="http://example.com/2022/12/07/Java%E5%85%AB%E8%82%A1%E6%96%87/index.html">
+<meta property="og:site_name" content="贾利凯的博客">
+<meta property="og:description" content="面试常见算法题刷题指南">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://x0.ifengimg.com/res/2020/6EA3EEB24044BEAD10D3B76306B5D9D613AB3727_size67_w1080_h559.jpeg">
+<meta property="article:published_time" content="2022-12-07T12:30:00.000Z">
+<meta property="article:modified_time" content="2023-06-04T11:22:55.733Z">
+<meta property="article:author" content="贾利凯">
+<meta property="article:tag" content="代码随想录">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://x0.ifengimg.com/res/2020/6EA3EEB24044BEAD10D3B76306B5D9D613AB3727_size67_w1080_h559.jpeg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>java八股文 - 贾利凯的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"qAYPMz0NNrEXozN9bdO5vFh9-gzGzoHsz","app_key":"Ht04GXxbCgOIEJ3YwdwXw923","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>JLK</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="java八股文"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        milkboy
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-12-07 20:30" pubdate>
+          2022年12月7日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          53 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">java八股文</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：3 分钟前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>面试常见算法题刷题指南</p>
+<span id="more"></span>
+
+<h2 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h2><ul>
+<li><p>进程是程序的一次执行过程，是系统运行的基本单位，是操作系统分配资源的基本单位，系统运行一个程序即是一个进程从创建，运行到消亡的过程。当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</p>
+</li>
+<li><p>线程是一个比进程更小的执行单位，一个进程可以包含多个线程</p>
+</li>
+<li><p>。一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享进程的<strong>堆</strong>和<strong>方法区</strong>资源，但每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
+</li>
+<li><p>程序计数器为什么单独拥有</p>
+<ul>
+<li>实现代码的流程控制，如：顺序执行、选择、循环、异常处理。</li>
+<li>程序计数器用于记录当前线程执行的位置，从而当线程被切换回来的时候能够知道该线程上次运行到哪儿了。</li>
+<li>程序计数器私有主要是为了<strong>线程切换后能恢复到正确的执行位置</strong>。</li>
+</ul>
+</li>
+<li><p>虚拟机栈单独拥有：</p>
+<ul>
+<li>每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息，</li>
+<li>为了<strong>保证线程中的局部变量不被别的线程访问到</strong>，虚拟机栈和本地方法栈是线程私有的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="JVM中的堆"><a href="#JVM中的堆" class="headerlink" title="JVM中的堆"></a>JVM中的堆</h2><p>堆和方法区是所有线程共享的资源，其中堆是进程中最大的一块内存，主要用于存放新创建的对象 (几乎所有对象都在这里分配内存)，方法区主要用于存放已被加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。</p>
+<h2 id="并发和并行的区别"><a href="#并发和并行的区别" class="headerlink" title="并发和并行的区别"></a>并发和并行的区别</h2><ul>
+<li>并发：两个及两个以上的作业在同一 <strong>时间段</strong> 内执行。（单个处理器按时间片轮流处理）</li>
+<li>并行：两个及两个以上的作业在同一 <strong>时刻</strong> 执行。（多个处理器同时处理）</li>
+</ul>
+<h2 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h2><ul>
+<li><strong>同步</strong> ： 发出一个调用之后，在没有得到结果之前， 该调用就不可以返回，一直等待。</li>
+<li><strong>异步</strong> ：调用在发出之后，不用等待返回结果，该调用直接返回</li>
+</ul>
+<h2 id="多线程的优缺点"><a href="#多线程的优缺点" class="headerlink" title="多线程的优缺点"></a>多线程的优缺点</h2><ul>
+<li><p>优点：当一个线程阻塞或者进入等待状态时，CPU可以先去执行别的线程，提高CPU的利用率，利用好多线程机制可以大大提高系统整体的并发能力以及性能。</p>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>上下文切换：频繁的上下文切换会影响多线程的执行速度。 </li>
+<li>死锁 </li>
+<li>资源限制：在进行并发编程时，程序的执行速度受限于计算机的硬件或软件资源。在并发编程中，程序执行变快的原因是将程序中串行执行的部分变成并发执行，如果因为资源限制，并发执行的部分仍在串行执行，程序执行将会变得更慢，因为程序并发需要上下文切换和资源调度</li>
+<li>内存泄漏、死锁、线程不安全等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程的生命周期和状态"><a href="#线程的生命周期和状态" class="headerlink" title="线程的生命周期和状态"></a>线程的生命周期和状态</h2><ul>
+<li>new：初始状态，创建了，还没有调用.start()</li>
+<li>RUNNABLE：运行状态，调用了.start()，处于运行状态了</li>
+<li>BLOCKED：阻塞状态，需要等待锁的释放</li>
+<li>WAITING：等待状态，需要其他线程通知或中断，执行.wait()</li>
+<li>TIME_WAITING：等待超时状态，指定时间之后自己返回</li>
+<li>TREMINATED：终止状态，线程执行完成</li>
+</ul>
+<p><img src="/../picture/image-20230403092858371.png" srcset="/img/loading.gif" lazyload alt="image-20230403092858371"></p>
+<h2 id="线程的上下文切换"><a href="#线程的上下文切换" class="headerlink" title="线程的上下文切换"></a>线程的上下文切换</h2><ul>
+<li><p>上下文：线程运行时的状态和条件</p>
+</li>
+<li><p>即便是单核的处理器也会支持多线程，处理器会给每个线程分配CPU时间片来实现这个机制。时间片是CPU分配给每个线程的执行时间，一般来说时间片非常的短，所以处理器会不停地切换线程。 CPU会通过时间片分配算法来循环执行任务，当前任务执行完一个时间片后会切换到下一个任务，但切换前会保存上一个任务的状态（回复现场），因为下次切换回这个任务时还要加载这个任务的状态继续执行，从任务保存到在加载的过程就是一次上下文切换</p>
+</li>
+<li><p>线程切换的情况</p>
+<ul>
+<li>主动让出 CPU，比如调用了 <code>sleep()</code>, <code>wait()</code> 等。</li>
+<li>时间片用完，因为操作系统要防止一个线程或者进程长时间占用 CPU 导致其他线程或者进程饿死。</li>
+<li>调用了阻塞类型的系统中断，比如请求 IO，线程被阻塞。</li>
+<li>被终止或结束运行</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户线程和守护线程"><a href="#用户线程和守护线程" class="headerlink" title="用户线程和守护线程"></a>用户线程和守护线程</h2><p>Thread.setDaemon(bool on) 设置，true则是将该线程设置为守护线程，false则是将该线程设置为用户线程。</p>
+<p>用户线程：平时使用到的线程</p>
+<p>守护线程：服务用户线程的线程，比如说垃圾回收</p>
+<p><strong>用户线程：当任何一个用户线程未结束，Java虚拟机是不会结束的。</strong></p>
+<p><strong>守护线程：如何只剩守护线程未结束，Java虚拟机结束。</strong></p>
+<h2 id="什么是线程死锁"><a href="#什么是线程死锁" class="headerlink" title="什么是线程死锁"></a>什么是线程死锁</h2><ul>
+<li>死锁：由于两个或两个以上的线程相互竞争对方的资源，而同时不释放自己的资源，导致所有线程同时被阻塞。</li>
+<li>死锁产生的条件：<ul>
+<li>互斥条件：一个资源在同一时刻只由一个线程占用。 </li>
+<li>请求与保持条件：一个线程在请求被占资源时发生阻塞，并对已获得的资源保持不放。 </li>
+<li>循环等待条件：发生死锁时，所有的线程会形成一个死循环，一直阻塞。 </li>
+<li>不剥夺条件：线程已获得的资源在未使用完不能被其他线程剥夺，只能由自己使用完释放资源。</li>
+</ul>
+</li>
+<li>避免死锁的办法：避免死锁的方法主要是破坏死锁产生的条件。 <ul>
+<li>破坏互斥条件：这个条件无法进行破坏，锁的作用就是使他们互斥。</li>
+<li>破坏请求与保持条件：一次性申请所有的资源。 </li>
+<li>破坏循环等待条件：按顺序来申请资源。</li>
+<li>破坏不剥夺条件：线程在申请不到所需资源时，主动放弃所持有的资源。</li>
+</ul>
+</li>
+<li>线程死锁的例子</li>
+</ul>
+<h2 id="java中的死锁，活锁，饥饿"><a href="#java中的死锁，活锁，饥饿" class="headerlink" title="java中的死锁，活锁，饥饿"></a>java中的死锁，活锁，饥饿</h2><ul>
+<li>活锁：任务或者执行者没有被阻塞，由于某些条件没有被满足，导致线程一直重复尝试、失败、尝试、失败。例如，线程1和线程2都需要获取一个资源，但他们同时让其他线程先获取该资源，两个线程一直谦让，最后都无法获取</li>
+<li>活锁和死锁的区别：<ul>
+<li>活锁是在不断尝试，死锁是一直在等待</li>
+<li>活锁有可能自行解开，死锁无法自行解开</li>
+</ul>
+</li>
+<li>饥饿：一个或者多个线程因为种种原因无法获得所需要的资源， 导致一直无法执行的状态。以打印机打印文件为例，当有多个线程需要打印文件，系统按照短文件优先的策略进行打印，但当短文件的打印任务一直不间断地出现，那长文件的打印任务会被一直推迟，导致饥饿。活锁就是在忙式等待条件下发生的饥饿，忙式等待就是不进入等待状态的等待。</li>
+<li>产生饥饿的原因：<ul>
+<li>高优先级的线程占用了低优先级线程的CPU时间</li>
+<li>线程被永久堵塞在一个等待进入同步块的状态，因为其他线程总是能在它之前持续地对该同步块进行访问。</li>
+<li>线程在等待一个本身也处于永久等待完成的对象(比如调用这个对象的wait()方法)，因为其他线程总是被持续地获得唤醒。</li>
+<li>饥饿也可自行解开，死锁不可以自行解开</li>
+</ul>
+</li>
+</ul>
+<h2 id="创建线程的几种方法"><a href="#创建线程的几种方法" class="headerlink" title="创建线程的几种方法"></a>创建线程的几种方法</h2><ul>
+<li>集成Thread类</li>
+<li>实现Runnable接口</li>
+<li>使用Callable和Future创建多线程</li>
+<li>使用线程池Executor框架<ul>
+<li>newCachedThreadPool创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。 </li>
+<li>newFixedThreadPool 创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。 </li>
+<li>newScheduledThreadPool 创建一个定长线程池，支持定时及周期性任务执行。 </li>
+<li>newSingleThreadExecutor 创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序执行。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Runable和Callable的区别"><a href="#Runable和Callable的区别" class="headerlink" title="Runable和Callable的区别"></a>Runable和Callable的区别</h2><ul>
+<li>相同点：<ul>
+<li>两者都是接口</li>
+<li>都需要调用Thread.start()来启动线程</li>
+</ul>
+</li>
+<li>不同点：<ul>
+<li>callable的核心是call()方法，允许返回值，runnable的核心是run()方法，没有返回值</li>
+<li>call()方法可以抛出异常，但是run()方法不行</li>
+<li>callable和runnable都可以应用于executors，thread类只支持runnable</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程Run和Start的区别"><a href="#线程Run和Start的区别" class="headerlink" title="线程Run和Start的区别"></a>线程Run和Start的区别</h2><ul>
+<li>线程是通过Thread对象所对应的方法run()来完成其操作的，而线程的启动是通过start()方法执行的。</li>
+<li>run()方法可以重复调用，start()方法只能调用一次</li>
+<li>调用start()方法可以开启一个线程，而run()方法只是thread类中的一个普通方法，直接调用run()方法还是在主线程中执行的。</li>
+</ul>
+<h2 id="线程同步和线程调度相关的方法有哪些"><a href="#线程同步和线程调度相关的方法有哪些" class="headerlink" title="线程同步和线程调度相关的方法有哪些"></a>线程同步和线程调度相关的方法有哪些</h2><ul>
+<li>wait()：使一个线程处于等待（阻塞）状态，并且释放所持有的对象的锁；</li>
+<li>sleep()：使当前线程进入指定毫秒数的休眠，暂停执行，需要处理InterruptedException。 </li>
+<li>notify()：唤醒一个处于等待状态的线程，当然在调用此方法的时候，并不能确切的唤醒某一个等待状态的线程，而是由 JVM 确定唤醒哪个线程，而且与优先级无关。 </li>
+<li>notifyAll()：唤醒所有处于等待状态的线程，该方法并不是将对象的锁给所有线程，而是让它们竞争，只有获得锁的线程才能进入就绪状态。 </li>
+<li>jion()：与sleep()方法一样，是一个可中断的方法，在一个线程中调用另一个线程的join()方法，会使得当前的线程挂起，知直到执行join()方法的线程结束。例如在B线程中调用A线程的join()方法，B线程进入阻塞状态，直到A线程结束或者到达指定的时间。 </li>
+<li>yield()：提醒调度器愿意放弃当前的CPU资源，使得当前线程从RUNNING状态切换到RUNABLE状态。</li>
+</ul>
+<h2 id="sleep-方法和wait-方法的区别？"><a href="#sleep-方法和wait-方法的区别？" class="headerlink" title="sleep()方法和wait()方法的区别？"></a>sleep()方法和wait()方法的区别？</h2><ul>
+<li>相同点：<ul>
+<li>都可以使线程进入阻塞状态</li>
+<li>都是可中断方法，被中断后都会收到异常信息</li>
+</ul>
+</li>
+<li>不同点：<ul>
+<li><strong><code>sleep()</code> 方法没有释放锁，而 <code>wait()</code> 方法释放了锁</strong> 。</li>
+<li><code>wait()</code> 通常被用于线程间交互&#x2F;通信，<code>sleep()</code>通常被用于暂停执行。</li>
+<li><code>wait()</code> 方法被调用后，线程不会自动苏醒，需要别的线程调用同一个对象上的 <code>notify()</code>或者 <code>notifyAll()</code> 方法。<code>sleep()</code>方法执行完成后，线程会自动苏醒，或者也可以使用 <code>wait(long timeout)</code> 超时后线程会自动苏醒。</li>
+<li><code>sleep()</code> 是 <code>Thread</code> 类的静态本地方法，<code>wait()</code> 则是 <code>Object</code> 类的本地方法。为什么这样设计呢？</li>
+<li>wait()必须在同步方法中执行，sleep不需要</li>
+</ul>
+</li>
+</ul>
+<h2 id="为什么-wait-方法不定义在-Thread-中？"><a href="#为什么-wait-方法不定义在-Thread-中？" class="headerlink" title="为什么 wait() 方法不定义在 Thread 中？"></a>为什么 wait() 方法不定义在 Thread 中？</h2><p><code>wait()</code> 是让获得对象锁的线程实现等待，会自动释放当前线程占有的对象锁。每个对象（<code>Object</code>）都拥有对象锁，既然要释放当前线程占有的对象锁并让其进入 WAITING 状态，自然是要操作对应的对象（<code>Object</code>）而非当前的线程（<code>Thread</code>）。</p>
+<p>类似的问题：<strong>为什么 <code>sleep()</code> 方法定义在 <code>Thread</code> 中？</strong></p>
+<p>因为 <code>sleep()</code> 是让当前线程暂停执行，不涉及到对象类，也不需要获得对象锁。</p>
+<h2 id="线程的通信方式有哪些"><a href="#线程的通信方式有哪些" class="headerlink" title="线程的通信方式有哪些"></a>线程的通信方式有哪些</h2><ul>
+<li>所与同步</li>
+<li>wait、notify、notifyAll</li>
+<li>信号量</li>
+<li>管道</li>
+</ul>
+<h2 id="为什么wait-，notify-和notifyAll-必须在同步方法或者同步块中被调用？"><a href="#为什么wait-，notify-和notifyAll-必须在同步方法或者同步块中被调用？" class="headerlink" title="为什么wait()，notify()和notifyAll()必须在同步方法或者同步块中被调用？"></a>为什么wait()，notify()和notifyAll()必须在同步方法或者同步块中被调用？</h2><p>因为wait()暂停的是持有锁的对象，notify()或notifyAll()唤醒的是等待锁的对象。所以wait()、notify()、notifyAll()都需要线程持有锁的对象，进而需要在同步方法或者同步块中被调用。</p>
+<h2 id="可以直接调用-Thread-类的-run-方法吗？"><a href="#可以直接调用-Thread-类的-run-方法吗？" class="headerlink" title="可以直接调用 Thread 类的 run 方法吗？"></a>可以直接调用 Thread 类的 run 方法吗？</h2><p>new 一个 <code>Thread</code>，线程进入了新建状态。调用 <code>start()</code>方法，会启动一个线程并使线程进入了就绪状态，当分配到时间片后就可以开始运行了。 <code>start()</code> 会执行线程的相应准备工作，然后自动执行 <code>run()</code> 方法的内容，这是真正的多线程工作。 但是，直接执行 <code>run()</code> 方法，会把 <code>run()</code> 方法当成一个 main 线程下的普通方法去执行，并不会在某个线程中执行它，所以这并不是多线程工作。</p>
+<p><strong>总结： 调用 <code>start()</code> 方法方可启动线程并使线程进入就绪状态，直接执行 <code>run()</code> 方法的话不会以多线程的方式执行。</strong></p>
+<h2 id="Java如何实现两个线程之间的通信和协作"><a href="#Java如何实现两个线程之间的通信和协作" class="headerlink" title="Java如何实现两个线程之间的通信和协作"></a>Java如何实现两个线程之间的通信和协作</h2><ul>
+<li>syncrhoized加锁的线程的Object类的wait()&#x2F;notify()&#x2F;notifyAll() </li>
+<li>ReentrantLock类加锁的线程的Condition类的await()&#x2F;signal()&#x2F;signalAll() </li>
+<li>通过管道进行线程间通信：1）字节流；2）字符流 ，就是一个线程发送数据到输出管道，另一个线程从输入管道读数据。</li>
+</ul>
+<h1 id="线程池（三大方法，七大参数，四大策略）"><a href="#线程池（三大方法，七大参数，四大策略）" class="headerlink" title="线程池（三大方法，七大参数，四大策略）"></a>线程池（三大方法，七大参数，四大策略）</h1><ul>
+<li>线程池就是管理一系列线程的资源池。当有任务要处理时，直接从线程池中获取线程来处理，处理完之后线程并不会立即被销毁，而是等待下一个任务。</li>
+</ul>
+<h2 id="为什么要使用线程池"><a href="#为什么要使用线程池" class="headerlink" title="为什么要使用线程池"></a>为什么要使用线程池</h2><ul>
+<li><strong>降低资源消耗</strong>。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</li>
+<li><strong>提高响应速度</strong>。当任务到达时，任务可以不需要等到线程创建就能立即执行。</li>
+<li><strong>提高线程的可管理性</strong>。线程是稀缺资源，如果无限制的创建，不仅会消耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控。</li>
+<li>程序复用，可以控制最大并发数，管理线程</li>
+</ul>
+<h2 id="线程创建的几种方法"><a href="#线程创建的几种方法" class="headerlink" title="线程创建的几种方法"></a>线程创建的几种方法</h2><ul>
+<li>线程池的常用创建方式主要有两种，通过Executors工厂方法创建和通过new ThreadPoolExecutor方法创建。 </li>
+<li>Executors工厂方法创建，在工具类 Executors 提供了一些静态的工厂方法 <ul>
+<li>newSingleThreadExecutor：创建一个单线程的线程池。 </li>
+<li>newFixedThreadPool：创建固定大小的线程池。 </li>
+<li>newCachedThreadPool：创建一个可缓存的线程池。 </li>
+<li>newScheduledThreadPool：创建一个大小无限的线程池。</li>
+</ul>
+</li>
+<li>new ThreadPoolExecutor 方法创建<ul>
+<li>通过new ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue workQueue，ThreadFactory threadFactory,RejectedExecutionHandler handler)自定义创建</li>
+</ul>
+</li>
+</ul>
+<h2 id="ThreadPoolExecutor-构造函数中的重要参数"><a href="#ThreadPoolExecutor-构造函数中的重要参数" class="headerlink" title="ThreadPoolExecutor 构造函数中的重要参数"></a>ThreadPoolExecutor 构造函数中的重要参数</h2><p><img src="/../picture/image-20230403113113011.png" srcset="/img/loading.gif" lazyload alt="image-20230403113113011"></p>
+<p><strong><code>ThreadPoolExecutor</code> 3 个最重要的参数：</strong></p>
+<ul>
+<li><strong><code>corePoolSize</code> :</strong> 任务队列未达到队列容量时，最大可以同时运行的线程数量。</li>
+<li><strong><code>maximumPoolSize</code> :</strong> 任务队列中存放的任务达到队列容量的时候，当前可以同时运行的线程数量变为最大线程数。</li>
+<li><strong><code>workQueue</code>:</strong> 新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。</li>
+</ul>
+<p><code>ThreadPoolExecutor</code>其他常见参数 :</p>
+<ul>
+<li><strong><code>keepAliveTime</code></strong>:线程池中的线程数量大于 <code>corePoolSize</code> 的时候，如果这时没有新的任务提交，核心线程外的线程不会立即销毁，而是会等待，直到等待的时间超过了 <code>keepAliveTime</code>才会被回收销毁；</li>
+<li><strong><code>unit</code></strong> : <code>keepAliveTime</code> 参数的时间单位。</li>
+<li><strong><code>threadFactory</code></strong> :executor 创建新线程的时候会用到。</li>
+<li><strong><code>handler</code></strong> :饱和策略。关于饱和策略下面单独介绍一下。</li>
+</ul>
+<p><img src="/../picture/image-20230403115421134.png" srcset="/img/loading.gif" lazyload alt="image-20230403115421134"></p>
+<h2 id="线程池的饱和策略（拒绝策略）"><a href="#线程池的饱和策略（拒绝策略）" class="headerlink" title="线程池的饱和策略（拒绝策略）"></a>线程池的饱和策略（拒绝策略）</h2><p>当同时运行的线程数量达到最大线程数量并且阻塞队列也已经放满了任务时，ThreadPoolExecutor会指定一些饱和策略。</p>
+<p>主要有以下四种类型：</p>
+<ul>
+<li>AbortPolicy策略：该策略会直接抛出异常拒绝新任务</li>
+<li>CallerRunsPolicy策略：当线程池无法处理当前任务时，会将该任务交由提交任务的线程来执行</li>
+<li>DiscardPolicy策略：直接丢弃新任务。</li>
+<li>DiscardOleddestPolicy策略：丢弃最早的未处理的任务请求。</li>
+</ul>
+<h2 id="线程池的最大大小如何确定"><a href="#线程池的最大大小如何确定" class="headerlink" title="线程池的最大大小如何确定"></a>线程池的最大大小如何确定</h2><ul>
+<li>CPU 密集型：几核CPU，就定义为几，可以保证CPU的效率最高</li>
+<li>IO 密集型：判断程序中十分消耗IO的线程，一般大于消耗IO线程的数字就可以了。一般是2倍即可</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/">#代码随想录</a>
+      
+        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'milkguy/comment-utterance');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
