@@ -1,0 +1,1364 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="贾利凯">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="基础知识一Java语言特点： 简单易学 面向对象（封装、继承、多态） 平台无关性（JVM） 支持多线程 可靠性 安全性 支持网络编程 编译与解释并存  JVM、JDK、JRE JVM：Java字节码虚拟机，针对不同操作系统具有不同实现，使用相同的字节码，可以得到相同的运行结果，是Java一次编译随处运行的关键。 JDK：功能齐全的Java SDK，包括JRE，Javac，Javadoc等工具 JR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贾利凯的博客">
+<meta property="og:url" content="http://example.com/2023/09/18/%E7%A7%8B%E6%8B%9BJava%E5%9F%BA%E7%A1%80%E5%85%AB%E8%82%A1%E6%96%87/index.html">
+<meta property="og:site_name" content="贾利凯的博客">
+<meta property="og:description" content="基础知识一Java语言特点： 简单易学 面向对象（封装、继承、多态） 平台无关性（JVM） 支持多线程 可靠性 安全性 支持网络编程 编译与解释并存  JVM、JDK、JRE JVM：Java字节码虚拟机，针对不同操作系统具有不同实现，使用相同的字节码，可以得到相同的运行结果，是Java一次编译随处运行的关键。 JDK：功能齐全的Java SDK，包括JRE，Javac，Javadoc等工具 JR">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/picture/image-20230904092658304.png">
+<meta property="og:image" content="http://example.com/picture/image-20230904094917184.png">
+<meta property="og:image" content="http://example.com/picture/image-20230904121445304.png">
+<meta property="og:image" content="http://example.com/picture/image-20230905164721630.png">
+<meta property="og:image" content="http://example.com/picture/image-20230905170343429.png">
+<meta property="og:image" content="http://example.com/picture/image-20230906134847777.png">
+<meta property="og:image" content="http://example.com/picture/image-20230908092121470.png">
+<meta property="og:image" content="http://example.com/picture/image-20230908092140505.png">
+<meta property="og:image" content="http://example.com/picture/image-20230913093151716.png">
+<meta property="og:image" content="http://example.com/picture/image-20230913093332370.png">
+<meta property="og:image" content="http://example.com/picture/image-20230913111406846.png">
+<meta property="og:image" content="http://example.com/picture/image-20230918215811209.png">
+<meta property="article:published_time" content="2023-09-18T13:58:12.000Z">
+<meta property="article:modified_time" content="2023-09-18T13:58:12.000Z">
+<meta property="article:author" content="贾利凯">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/picture/image-20230904092658304.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>贾利凯的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"qAYPMz0NNrEXozN9bdO5vFh9-gzGzoHsz","app_key":"Ht04GXxbCgOIEJ3YwdwXw923","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>JLK</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        贾利凯
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-18 21:58" pubdate>
+          2023年9月18日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          15k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          126 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <script type="text/javascript" src="/love.js"></script>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="基础知识一"><a href="#基础知识一" class="headerlink" title="基础知识一"></a>基础知识一</h2><h3 id="Java语言特点："><a href="#Java语言特点：" class="headerlink" title="Java语言特点："></a>Java语言特点：</h3><ul>
+<li>简单易学</li>
+<li>面向对象（封装、继承、多态）</li>
+<li>平台无关性（JVM）</li>
+<li>支持多线程</li>
+<li>可靠性</li>
+<li>安全性</li>
+<li>支持网络编程</li>
+<li>编译与解释并存</li>
+</ul>
+<h3 id="JVM、JDK、JRE"><a href="#JVM、JDK、JRE" class="headerlink" title="JVM、JDK、JRE"></a>JVM、JDK、JRE</h3><ul>
+<li>JVM：Java字节码虚拟机，针对不同操作系统具有不同实现，使用相同的字节码，可以得到相同的运行结果，是Java一次编译随处运行的关键。</li>
+<li>JDK：功能齐全的Java SDK，包括JRE，Javac，Javadoc等工具</li>
+<li>JRE：Java运行时环境，包括JVM和Java基础类库</li>
+</ul>
+<h3 id="什么是字节码"><a href="#什么是字节码" class="headerlink" title="什么是字节码"></a>什么是字节码</h3><p>​	JVM可以理解的代码，也就是.class文件，只面向Java虚拟机，Java语言通过字节码的方式解决了解释性语言效率低的问题，又保留了解释性语言可移植的特点</p>
+<p><img src="/../picture/image-20230904092658304.png" srcset="/img/loading.gif" lazyload alt="image-20230904092658304"></p>
+<blockquote>
+<p>JIT(just-in-time compilation)：运行时编译，对于热点代码，当编译器完成编译后，会把对应的机器码保存下来，下次可以直接使用</p>
+<p>AOT：JDK9的新特性，直接将字节码编译成机器码</p>
+</blockquote>
+<h3 id="为什么说Java是编译和解释并存的语言？"><a href="#为什么说Java是编译和解释并存的语言？" class="headerlink" title="为什么说Java是编译和解释并存的语言？"></a>为什么说Java是编译和解释并存的语言？</h3><ul>
+<li>编译型：将源代码直接翻译成机器码，编译效率高，开发效率低</li>
+<li>解释型：一句一句解释为机器码以后再执行，开发效率高，执行速度慢</li>
+<li>Java既有编译语言的特点，又有解释语言的特点，先编译成.class字节码文件，然后解释型再执行</li>
+</ul>
+<h3 id="Java和C-区别"><a href="#Java和C-区别" class="headerlink" title="Java和C++区别"></a>Java和C++区别</h3><ul>
+<li>Java有垃圾回收机制，C++没有</li>
+<li>Java不能操作指针直接访问内存，更安全</li>
+<li>Java的类是单继承的，C++是多继承的，Java接口可以多继承</li>
+<li>Java支持方法重载，不支持运算符重载，C++都支持</li>
+</ul>
+<h3 id="注解的形式"><a href="#注解的形式" class="headerlink" title="注解的形式"></a>注解的形式</h3><ul>
+<li>单行、多行、文档</li>
+</ul>
+<h3 id="标识符和关键字"><a href="#标识符和关键字" class="headerlink" title="标识符和关键字"></a>标识符和关键字</h3><ul>
+<li>标识符：程序、类、方法、变量的名字</li>
+<li>关键字：被赋予特殊含义的标识符</li>
+</ul>
+<h3 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h3><ul>
+<li>a++：先赋值，再自增</li>
+<li>++a：先自增，再赋值</li>
+</ul>
+<h3 id="移位运算符"><a href="#移位运算符" class="headerlink" title="移位运算符"></a>移位运算符</h3><ul>
+<li>&lt;&lt;：高位丢失，低位补0，结果乘2</li>
+<li><code>&gt;&gt;</code>：低位丢失，高位加符号位，+0，-1</li>
+<li><code>&gt;&gt;&gt;</code>：低位丢失，高位补0</li>
+</ul>
+<blockquote>
+<p>float和short类型的不能移位，byte,short,char移位前都会转化成int</p>
+<p>如果移位的位数大于本来都位数，需要进行取余，int取余32，long取余64</p>
+</blockquote>
+<h3 id="contine，break，return"><a href="#contine，break，return" class="headerlink" title="contine，break，return"></a>contine，break，return</h3><ul>
+<li>contine：跳出一次循环</li>
+<li>break：退出整个循环</li>
+<li>return跳出方法</li>
+</ul>
+<h3 id="Java基本数据类型"><a href="#Java基本数据类型" class="headerlink" title="Java基本数据类型"></a>Java基本数据类型</h3><ul>
+<li>整数：byte、short、int、long</li>
+<li>字符：char</li>
+<li>布尔：boolean</li>
+<li>浮点数：float，double</li>
+</ul>
+<p><img src="/../picture/image-20230904094917184.png" srcset="/img/loading.gif" lazyload alt="image-20230904094917184"></p>
+<blockquote>
+<p>Long类型的后面要加L，字符型：单引号，字符串型：双引号</p>
+<p>包装类：Byte、Shorter、Integer、Long、Boolean、Character、Float、Double</p>
+</blockquote>
+<h3 id="基本类型和包装类型的区别"><a href="#基本类型和包装类型的区别" class="headerlink" title="基本类型和包装类型的区别"></a>基本类型和包装类型的区别</h3><ul>
+<li>用途：除了常量和部分局部变量会用基本数据类型，其他的方法参数，对象属性之类的基本都用包装类型，包装类型可以用泛型，基本类型不会</li>
+<li>存储方式：<ul>
+<li>基本数据类型的局部变量存储在Java虚拟机栈中的局部变量表中</li>
+<li>基本数据类型成员变量未被static修饰，存放在Java虚拟机的堆中</li>
+<li>包装类型属于对象，对象的实例都存储在堆中</li>
+</ul>
+</li>
+<li>占用空间：基本数据类型占用空间比较小</li>
+<li>默认值：成员变量包装类型不赋值就是null，基本数据类型有默认值</li>
+<li>比较方式：基本数据类型&#x3D;&#x3D;比较的是值，旧包装类型&#x3D;&#x3D;比较的是内存地址，如果想要比较值，使用equals()方法</li>
+</ul>
+<blockquote>
+<p>基本数据类型存放在栈中是一个常见误区，类的成员变量如果没有被static修饰的话，就存放在堆中</p>
+</blockquote>
+<h3 id="包的缓存机制"><a href="#包的缓存机制" class="headerlink" title="包的缓存机制"></a>包的缓存机制</h3><ul>
+<li>Byte、Short、Integer、Long默认创建了[-128, 127]，Character创建了[0, 127]，Boolean直接返回True或者False</li>
+<li>源码判断，如果在缓存范围之内，直接返回缓存值就行，如果不在，就创建一个新对象</li>
+</ul>
+<h3 id="自动装箱机制和拆箱机制"><a href="#自动装箱机制和拆箱机制" class="headerlink" title="自动装箱机制和拆箱机制"></a>自动装箱机制和拆箱机制</h3><ul>
+<li><p>装箱：将基本数据类型用对应的引用类型包装起来 </p>
+<ul>
+<li>&#96;&#96;&#96;java<br>Integer i &#x3D; 10;<br>调用了包装类型的ValueOf()方法<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs excel"><br>* 拆箱：将包装类型转化为基本数据类型<br><br>  * ```java<br>    <span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span> = <span class="hljs-number">10</span>;<br>    <span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span> = <span class="hljs-number">10</span>.intValue()<br>    调用了xxxValue方法<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="为什么浮点数会精度丢失"><a href="#为什么浮点数会精度丢失" class="headerlink" title="为什么浮点数会精度丢失"></a>为什么浮点数会精度丢失</h3><ul>
+<li>计算机表示数字时，宽度是有限的，所以使用浮点数表示时，就会造成精度丢失</li>
+<li>Java解决精度丢失使用<code>BigDecimal</code>包，使用BigDecimal时注意要将浮点数加双引号表示</li>
+</ul>
+<h3 id="Java超出数据范围精度时该怎么使用"><a href="#Java超出数据范围精度时该怎么使用" class="headerlink" title="Java超出数据范围精度时该怎么使用"></a>Java超出数据范围精度时该怎么使用</h3><ul>
+<li>使用BigInteger包来使用，BigInteger包内部使用int[ ]数组来存储，效率相对比较低</li>
+</ul>
+<h3 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h3><ul>
+<li>语法形式：<ul>
+<li>成员变量属于类，局部变量属于方法或代码块</li>
+<li>成员变量可以被public，static修饰，局部变量不可以，但是都可以用final修饰</li>
+</ul>
+</li>
+<li>存储方式：<ul>
+<li>成员变量使用static修饰，属于类，存储在栈中，没使用static修饰，属于实例，存储在堆中</li>
+</ul>
+</li>
+<li>生存时间：<ul>
+<li>成员变量属于对象的一部分，随着对象创建产生，而局部变量随着方法调用产生，方法调用结束消亡</li>
+</ul>
+</li>
+<li>默认值：<ul>
+<li>成员变量没有初始化的话，自动以默认值来赋值，局部变量不会赋默认值</li>
+</ul>
+</li>
+</ul>
+<h3 id="静态变量作用"><a href="#静态变量作用" class="headerlink" title="静态变量作用"></a>静态变量作用</h3><ul>
+<li>所有类共有一个静态变量，只会被分配一次内存，无论创建多少个对象，都只共享一份静态变量</li>
+<li>静态变量需要通过类名去访问</li>
+</ul>
+<h3 id="字符常量和字符串常量的区别"><a href="#字符常量和字符串常量的区别" class="headerlink" title="字符常量和字符串常量的区别"></a>字符常量和字符串常量的区别</h3><ul>
+<li>字符常量占用两个字符</li>
+</ul>
+<h3 id="静态方法为什么不能调用非静态成员"><a href="#静态方法为什么不能调用非静态成员" class="headerlink" title="静态方法为什么不能调用非静态成员"></a>静态方法为什么不能调用非静态成员</h3><ul>
+<li>静态方法是属于类的，在类加载的时候就会分配内存，可以通过类名来直接访问。而非静态方法是属于实例对象的，需要通过实例对象去访问，在类的非静态成员变量不存在的时候，静态方法就已经存在了，此时调用非静态成员就属于非法操作</li>
+</ul>
+<h3 id="静态方法和实例方法有什么不同"><a href="#静态方法和实例方法有什么不同" class="headerlink" title="静态方法和实例方法有什么不同"></a>静态方法和实例方法有什么不同</h3><ul>
+<li>调用方式：静态方法一般用类名.方法名来访问，而实例方法一般使用对象.方法名</li>
+<li>访问是否首先：静态方法只允许访问静态成员，不允许访问实例成员，而实例方法不存在这种问题</li>
+</ul>
+<h3 id="重载和重写的区别"><a href="#重载和重写的区别" class="headerlink" title="重载和重写的区别"></a>重载和重写的区别</h3><ul>
+<li>重载：在同一个类中，方法名必须相同，参数个数，参数类型，返回值类型，参数顺序都可以不同，返回不同的结果</li>
+<li>重写：发生在运行期间，子类可以对父类允许访问的方法的实现过程进行重写的过程<ul>
+<li>子类对父类的重新改造，外部样子不变，内部逻辑改变</li>
+<li>重写<code>两同两小一大</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="/../picture/image-20230904121445304.png" srcset="/img/loading.gif" lazyload alt="image-20230904121445304"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Hero</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">name</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;超级英雄&quot;</span>;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SuperMan</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Hero</span>&#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">name</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;超人&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">public</span> Hero <span class="hljs-title function_">hero</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Hero</span>();<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SuperSuperMan</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">SuperMan</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">name</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;超级超级英雄&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> SuperMan <span class="hljs-title function_">hero</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SuperMan</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="可变长参数"><a href="#可变长参数" class="headerlink" title="可变长参数"></a>可变长参数</h3><ul>
+<li>可变长参数底层实现是一个数组</li>
+</ul>
+<h2 id="基础知识点二"><a href="#基础知识点二" class="headerlink" title="基础知识点二"></a>基础知识点二</h2><h3 id="面向对象和面向过程的区别"><a href="#面向对象和面向过程的区别" class="headerlink" title="面向对象和面向过程的区别"></a>面向对象和面向过程的区别</h3><ul>
+<li>面向过程把问题拆分成一个一个的方法，然后通过方法的执行来解决问题</li>
+<li>面向对象会抽离出对象，用对象执行方法的方式解决问题</li>
+</ul>
+<h3 id="创建对象用什么关键字"><a href="#创建对象用什么关键字" class="headerlink" title="创建对象用什么关键字"></a>创建对象用什么关键字</h3><ul>
+<li>创建一个对象用new关键字，new创建的对象实例存放在堆内存中，对象引用指向对象实例，对象引用存放在栈内存中<ul>
+<li>一个引用可以指向0个或1个对象</li>
+<li>一个对象可以有n个引用指向</li>
+</ul>
+</li>
+</ul>
+<h3 id="对象相等和引用相等的区别"><a href="#对象相等和引用相等的区别" class="headerlink" title="对象相等和引用相等的区别"></a>对象相等和引用相等的区别</h3><ul>
+<li>对象相等是指对象中存放的内容相等</li>
+<li>引用相等是指指向他们都内存地址是否相同</li>
+</ul>
+<h3 id="如果一个类没有声明构造方法，这个类能正常执行吗"><a href="#如果一个类没有声明构造方法，这个类能正常执行吗" class="headerlink" title="如果一个类没有声明构造方法，这个类能正常执行吗"></a>如果一个类没有声明构造方法，这个类能正常执行吗</h3><ul>
+<li>如果一个类没有声明构造方法，默认有一个不带参数的构造方法</li>
+<li>如果自己添加了构造方法，这个方法就没有了</li>
+</ul>
+<h3 id="构造方法有哪些特点，是否可以被重写"><a href="#构造方法有哪些特点，是否可以被重写" class="headerlink" title="构造方法有哪些特点，是否可以被重写"></a>构造方法有哪些特点，是否可以被重写</h3><ul>
+<li>构造方法特点<ul>
+<li>方法名和类名相同</li>
+<li>没有返回值，不能用void声明</li>
+<li>创建类的对象时自动执行</li>
+</ul>
+</li>
+<li>构造方法可以被重载，不可以被重写</li>
+</ul>
+<h3 id="面向对象三大特征"><a href="#面向对象三大特征" class="headerlink" title="面向对象三大特征"></a>面向对象三大特征</h3><ul>
+<li>封装：把对象的属性隐藏在内部，不允许外部对象直接访问，但是可以给外部对象提供一些访问和操作的方法</li>
+<li>继承：使用已存在的类作为基础建立新的类，新类可以增加新的数据或新的功能，也可以使用父类的功能，但不能选择性的继承父类，通过继承可以快速创建新累，可以提高代码的重用<ul>
+<li>子类拥有父类的属性和方法，父类中的私有属性和私有方法无法访问，只是拥有</li>
+<li>子类可以拥有自己的属性和方法，可以对父类进行扩展</li>
+<li>子类可以用自己的方法实现父类</li>
+</ul>
+</li>
+<li>多态：一个对象具有多种状态，具体表现为父类的引用指向子类的实例<ul>
+<li>对象的类型和引用类型直接具有继承关系</li>
+<li>引用类型变量发出的方法调用的到底是哪个类中的方法，必须在程序运行期间才能确定</li>
+<li>多态不能调用只存在子类而不存在父类中的方法</li>
+<li>子类重写了父类的方法，真正执行的是子类覆盖的方法，如果子类没有重写父类的方法，执行的就是父类的方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="抽象类和接口有什么区别"><a href="#抽象类和接口有什么区别" class="headerlink" title="抽象类和接口有什么区别"></a>抽象类和接口有什么区别</h3><ul>
+<li>共同点<ul>
+<li>都不能被实例化</li>
+<li>都包含抽象方法，子类必须重写这些方法</li>
+<li>都有默认实现方法</li>
+</ul>
+</li>
+<li>不同点</li>
+</ul>
+<p><img src="/../picture/image-20230905164721630.png" srcset="/img/loading.gif" lazyload alt="image-20230905164721630"></p>
+<h3 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h3><p><img src="/../picture/image-20230905170343429.png" srcset="/img/loading.gif" lazyload alt="image-20230905170343429"></p>
+<ul>
+<li>浅拷贝：浅拷贝会在堆上创建一个新对象，对于基本的数据类型进行值传递，对引用数据类型，浅拷贝会直接复制内部对象的引用地址，也就是说拷贝对象和原对象共用一个内部对象</li>
+<li>深拷贝：完全复制整个对象</li>
+<li>引用拷贝：两个不同的引用指向同一个对象</li>
+</ul>
+<h3 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，用于返回当前运行时对象的 Class 对象，使用了 final 关键字修饰，故不允许子类重写。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">native</span> Class&lt;?&gt; getClass()<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，用于返回对象的哈希码，主要使用在哈希表中，比如 JDK 中的HashMap。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">native</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 用于比较 2 个对象的内存地址是否相等，String 类对该方法进行了重写以用于比较字符串的值是否相等。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object obj)</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，用于创建并返回当前对象的一份拷贝。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">native</span> Object <span class="hljs-title function_">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 返回类的名字实例的哈希码的 16 进制的字符串。建议 Object 所有的子类都重写这个方法。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，并且不能重写。唤醒一个在此对象监视器上等待的线程(监视器相当于就是锁的概念)。如果有多个线程在等待只会任意唤醒一个。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">notify</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native 方法，并且不能重写。跟 notify 一样，唯一的区别就是会唤醒在此对象监视器上等待的所有线程，而不是一个线程。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">notifyAll</span><span class="hljs-params">()</span><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * native方法，并且不能重写。暂停线程的执行。注意：sleep 方法没有释放锁，而 wait 方法释放了锁 ，timeout 是等待时间。</span><br><span class="hljs-comment"> */</span><br>publicfinal <span class="hljs-keyword">native</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">wait</span><span class="hljs-params">(<span class="hljs-type">long</span> timeout)</span> <span class="hljs-keyword">throws</span> InterruptedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 多了 nanos 参数，这个参数表示额外时间（以纳秒为单位，范围是 0-999999）。 所以超时的时间还需要加上 nanos 纳秒。。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">wait</span><span class="hljs-params">(<span class="hljs-type">long</span> timeout, <span class="hljs-type">int</span> nanos)</span> <span class="hljs-keyword">throws</span> InterruptedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 跟之前的2个wait方法一样，只不过该方法一直等待，没有超时时间这个概念</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">wait</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> InterruptedException<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 实例被垃圾回收器回收的时候触发的操作</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">finalize</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Throwable &#123; &#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="x3D-x3D-和equals的区别"><a href="#x3D-x3D-和equals的区别" class="headerlink" title="&#x3D;&#x3D;和equals的区别"></a>&#x3D;&#x3D;和equals的区别</h3><ul>
+<li>基本数据类型&#x3D;&#x3D;比较的是值，引用类型&#x3D;&#x3D;比较的是数值</li>
+<li>equals比较两个对象是否相等<ul>
+<li>String重写了equals，所以String比较的是两个字符串的值</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>使用String创建一个值的时候，先要从常量池中判断一下有没有这个值，如果没有的话才会重新创建一个String对象，如果有的话直接从常量池中引用了</p>
+</blockquote>
+<h3 id="HashCode有什么用"><a href="#HashCode有什么用" class="headerlink" title="HashCode有什么用"></a>HashCode有什么用</h3><ul>
+<li>获取哈希码，确定该对象在哈希表中的索引位置，根据键很快就能获取到值</li>
+</ul>
+<h4 id="为什么还有有hashCode了"><a href="#为什么还有有hashCode了" class="headerlink" title="为什么还有有hashCode了"></a>为什么还有有hashCode了</h4><ul>
+<li>拿HashSet举例，在添加元素的时候，会判断两个元素是否相同，先判断hashCode的值，如果HashCode的值相同再使用equals判断，这样效率比较高</li>
+<li>如果两个对象HashCode值相同，两个对象不一定相同，哈希碰撞</li>
+<li>如果两个对象HashCode相同，equals判断也相同，才相同</li>
+<li>如果两个对象HashCode不同，那这两个对象就不相同</li>
+</ul>
+<h3 id="为什么重写equals方法的时候必须要重写HashCode方法"><a href="#为什么重写equals方法的时候必须要重写HashCode方法" class="headerlink" title="为什么重写equals方法的时候必须要重写HashCode方法"></a>为什么重写equals方法的时候必须要重写HashCode方法</h3><ul>
+<li>两个相同的对象HashCode必须相同，如果不重写可能会出现两个对象相等，HashCode值却不相同的情况</li>
+</ul>
+<h3 id="String、StringBuffer、StringBuilder"><a href="#String、StringBuffer、StringBuilder" class="headerlink" title="String、StringBuffer、StringBuilder"></a>String、StringBuffer、StringBuilder</h3><ul>
+<li>可变性：<ul>
+<li>String不可变</li>
+<li>StringBuilder和StringBuffer可变</li>
+</ul>
+</li>
+<li>线程安全性：<ul>
+<li>String线程安全</li>
+<li>StringBuffer加了同步锁，线程安全</li>
+<li>StringBuilder没加同步锁，线程不安全</li>
+</ul>
+</li>
+<li>性能：<ul>
+<li>String改变的时候，会生成一个新的String对象</li>
+<li>StringBuffer和StringBuilder在自身操作对象</li>
+<li>StringBuilder性能稍微好一点</li>
+</ul>
+</li>
+<li>总结：<ul>
+<li>少量数据用String</li>
+<li>单线程操作大量数据用StringBuilder</li>
+<li>多线程操作大量数据用StringBuffer</li>
+</ul>
+</li>
+</ul>
+<h3 id="String为什么不可变"><a href="#String为什么不可变" class="headerlink" title="String为什么不可变"></a>String为什么不可变</h3><p>​	String数组的底层使用private final(不可被继承)修饰了一个字符数组，没有提供操作这个数组的方法，所以不可变</p>
+<h3 id="字符的拼接用“-”还是用StringBuilder"><a href="#字符的拼接用“-”还是用StringBuilder" class="headerlink" title="字符的拼接用“+”还是用StringBuilder"></a>字符的拼接用“+”还是用StringBuilder</h3><ul>
+<li>使用+拼接字符串的时候，从对应的字节码文件可以看出来，其实是先使用StringBuilder.append方法拼接上，然后再使用toString()方法转化成一个String对象</li>
+<li>循环拼接的话，会创建多个StringBuilder，所以一般用StringBuilder直接拼接</li>
+</ul>
+<h3 id="常量池"><a href="#常量池" class="headerlink" title="常量池"></a>常量池</h3><ul>
+<li>JVM为了提升性能和减少内存消耗对String类的影响，专门开辟了一个区域，避免字符串重复创建</li>
+</ul>
+<h3 id="String-intern"><a href="#String-intern" class="headerlink" title="String.intern"></a>String.intern</h3><ul>
+<li>将指定的字符串对象的引用保存在字符串的常量池中<ul>
+<li>如果字符串的常量池中保存了引用，直接返回</li>
+<li>如果没有保存，创建一个新的字符串对象引用并返回</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 在堆中创建字符串对象”Java“</span><br><span class="hljs-comment">// 将字符串对象”Java“的引用保存在字符串常量池中</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Java&quot;</span>;<br><span class="hljs-comment">// 直接返回字符串常量池中字符串对象”Java“对应的引用</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> s1.intern();<br><span class="hljs-comment">// 会在堆中在单独创建一个字符串对象</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s3</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;Java&quot;</span>);<br><span class="hljs-comment">// 直接返回字符串常量池中字符串对象”Java“对应的引用</span><br><span class="hljs-type">String</span> <span class="hljs-variable">s4</span> <span class="hljs-operator">=</span> s3.intern();<br><span class="hljs-comment">// s1 和 s2 指向的是堆中的同一个对象</span><br>System.out.println(s1 == s2); <span class="hljs-comment">// true</span><br><span class="hljs-comment">// s3 和 s4 指向的是堆中不同的对象</span><br>System.out.println(s3 == s4); <span class="hljs-comment">// false</span><br><span class="hljs-comment">// s1 和 s4 指向的是堆中的同一个对象</span><br>System.out.println(s1 == s4); <span class="hljs-comment">//true</span><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="String拼接字符串"><a href="#String拼接字符串" class="headerlink" title="String拼接字符串"></a>String拼接字符串</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">str1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">str2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;ing&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">str3</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span> + <span class="hljs-string">&quot;ing&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">str4</span> <span class="hljs-operator">=</span> str1 + str2;<br><span class="hljs-type">String</span> <span class="hljs-variable">str5</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;string&quot;</span>;<br>System.out.println(str3 == str4);<span class="hljs-comment">//false</span><br>System.out.println(str3 == str5);<span class="hljs-comment">//true</span><br>System.out.println(str4 == str5);<span class="hljs-comment">//false</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>对于编译期可以确定值的字符串，也就是常量字符串 ，jvm 会将其存入字符串常量池。并且，字符串常量拼接得到的字符串常量在编译阶段就已经被存放字符串常量池，这个得益于编译器的优化。</strong></p>
+</li>
+<li><p>常量折叠：</p>
+</li>
+<li><p>常量折叠会把常量表达式的值求出来作为常量嵌在最终生成的代码中，这是 Javac 编译器会对源代码做的极少量优化措施之一(代码优化几乎都在即时编译器中进行)。对于 <code>String str3 = &quot;str&quot; + &quot;ing&quot;;</code> 编译器会给你优化成 <code>String str3 = &quot;string&quot;;</code> 。</p>
+</li>
+<li><p>适用于常量折叠的情况：编译期间就可以确定的值</p>
+<ul>
+<li>基本数据类型以及常量字符串</li>
+<li>final修饰的基本数据类型和字符串变量</li>
+<li>字符串的拼接，基本数据类型键的预算(+、-、*、&#x2F;、&lt;&lt;、&gt;&gt;、&gt;&gt;&gt;)</li>
+</ul>
+</li>
+<li><p>使用final修饰的字符串会被编译器当做常量来处理</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">str1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span>;<br><span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">str2</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;ing&quot;</span>;<br><span class="hljs-comment">// 下面两个表达式其实是等价的</span><br><span class="hljs-type">String</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span> + <span class="hljs-string">&quot;ing&quot;</span>;<span class="hljs-comment">// 常量池中的对象</span><br><span class="hljs-type">String</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> str1 + str2; <span class="hljs-comment">// 常量池中的对象</span><br>System.out.println(c == d);<span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>如果编译器在运行时才能确定值的话，就无法进行优化（str2就是在运行期间才能确定值）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">str1</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span>;<br><span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">str2</span> <span class="hljs-operator">=</span> getStr();<br><span class="hljs-type">String</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;str&quot;</span> + <span class="hljs-string">&quot;ing&quot;</span>;<span class="hljs-comment">// 常量池中的对象</span><br><span class="hljs-type">String</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> str1 + str2; <span class="hljs-comment">// 在堆上创建的新的对象</span><br>System.out.println(c == d);<span class="hljs-comment">// false</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">getStr</span><span class="hljs-params">()</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ing&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="基础知识三"><a href="#基础知识三" class="headerlink" title="基础知识三"></a>基础知识三</h2><p><img src="/../picture/image-20230906134847777.png" srcset="/img/loading.gif" lazyload alt="image-20230906134847777"></p>
+<h3 id="Exception和Error有什么区别"><a href="#Exception和Error有什么区别" class="headerlink" title="Exception和Error有什么区别"></a>Exception和Error有什么区别</h3><ul>
+<li>Exception：程序本身可以处理的异常，可以通过catch来捕获，Exception又可以分为Checked Exception和Unchecked Exception</li>
+<li>Error：程序无法处理的错误，不建议通过catch捕获，一般异常发生时，Java虚拟机一般会选择线程终止</li>
+</ul>
+<h3 id="Checked-Exception和Unchecked-Exception有什么区别"><a href="#Checked-Exception和Unchecked-Exception有什么区别" class="headerlink" title="Checked Exception和Unchecked Exception有什么区别"></a>Checked Exception和Unchecked Exception有什么区别</h3><ul>
+<li>Checked Exception受检查异常：Java在代码编译过程中，受检查异常如果没有被catch或throws的话，就没办法顺利通过编译</li>
+<li>Unchecked Exception不受检查异常：Java在代码编译过程中，不处理不受检查异常也可以正常编译通过<ul>
+<li>RuntimeExcepion异常及其子类都是非受检查异常</li>
+</ul>
+</li>
+</ul>
+<h3 id="Throwable类常用的方法有哪些"><a href="#Throwable类常用的方法有哪些" class="headerlink" title="Throwable类常用的方法有哪些"></a>Throwable类常用的方法有哪些</h3><ul>
+<li><code>String getMessage()</code>: 返回异常发生时的简要描述</li>
+<li><code>String toString()</code>: 返回异常发生时的详细信息</li>
+<li><code>String getLocalizedMessage()</code>: 返回异常对象的本地化信息。使用 <code>Throwable</code> 的子类覆盖这个方法，可以生成本地化信息。如果子类没有覆盖该方法，则该方法返回的信息与 <code>getMessage()</code>返回的结果相同</li>
+<li><code>void printStackTrace()</code>: 在控制台上打印 <code>Throwable</code> 对象封装的异常信息</li>
+</ul>
+<h3 id="Try-Catch-Finally"><a href="#Try-Catch-Finally" class="headerlink" title="Try Catch Finally"></a>Try Catch Finally</h3><ul>
+<li>try：捕获异常</li>
+<li>catch：处理try捕获到的异常</li>
+<li>fianlly：不论是否捕获或者处理异常，finally快里的语句都会被执行，如果有return语句，finally代码块里的语句也会在方法返回之前执行</li>
+</ul>
+<blockquote>
+<p>不要在finally中使用return语句，会覆盖try中的return语句的返回值的</p>
+</blockquote>
+<h3 id="finally中的代码一定会执行吗"><a href="#finally中的代码一定会执行吗" class="headerlink" title="finally中的代码一定会执行吗"></a>finally中的代码一定会执行吗</h3><ul>
+<li>finally在执行之前虚拟机被中止了，就执行不了</li>
+<li>程序所在的线程死亡</li>
+<li>关闭CPU</li>
+</ul>
+<h3 id="异常使用需要注意的地方"><a href="#异常使用需要注意的地方" class="headerlink" title="异常使用需要注意的地方"></a>异常使用需要注意的地方</h3><ul>
+<li>不要把异常定义为静态变量，因为这样会导致异常栈信息错乱。每次手动抛出异常，我们都需要手动 new 一个异常对象抛出。</li>
+<li>抛出的异常信息一定要有意义。</li>
+</ul>
+<h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><h4 id="泛型的概念"><a href="#泛型的概念" class="headerlink" title="泛型的概念"></a>泛型的概念</h4><p>​	泛型是JDK5引入的一个新特性，使用泛型参数，可以增强代码的可读性和稳定性</p>
+<h4 id="泛型的使用方式"><a href="#泛型的使用方式" class="headerlink" title="泛型的使用方式"></a>泛型的使用方式</h4><ul>
+<li>泛型类</li>
+<li>泛型接口</li>
+<li>泛型方法</li>
+</ul>
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt; E &gt; <span class="hljs-keyword">void</span> <span class="hljs-title function_">printArray</span><span class="hljs-params">( E[] inputArray )</span>一般被称为静态泛型方法;在 java 中泛型只是一个占位符，必须在传递类型后才能使用。类在实例化时才能真正的传递类型参数，由于静态方法的加载先于类的实例化，也就是说类中的泛型还没有传递真正的类型参数，静态的方法的加载就已经完成了，所以静态泛型方法是没有办法使用类上声明的泛型的。只能使用自己声明的&lt;E&gt;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="什么是泛型擦除"><a href="#什么是泛型擦除" class="headerlink" title="什么是泛型擦除"></a>什么是泛型擦除</h4><p>​	Java的泛型基本上都是在编译器这个层面上执行的，在生成的字节码中是不包含泛型信息的，使用泛型的时候加上类型参数，在编译的时候会去掉，这个过程称为类型擦除，使用反射操作可以在整形数组中添加字符串</p>
+<ul>
+<li>既然存在类型擦除，那么Java是如何保证在ArrayList添加字符串会报错呢？<ul>
+<li>编译器是通过先检查代码中泛型的类型，然后再进行类型擦除，然后再进行编译的</li>
+</ul>
+</li>
+</ul>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><ul>
+<li>反射赋予了我们再运行时分析类和执行类的能力，通过反射可以获取到任何一个类的属性和方法</li>
+<li>框架中大量使用了动态代理，动态代理的实现依赖反射</li>
+<li>Java中的注解也大量用到了反射</li>
+</ul>
+<h4 id="反射的优缺点"><a href="#反射的优缺点" class="headerlink" title="反射的优缺点"></a>反射的优缺点</h4><ul>
+<li>优点：可以让代码更加灵活，为各种框架提供了开箱即用的便利</li>
+<li>缺点：在运行时有了分析和操作类的能力，增加了安全问题<ul>
+<li>可以无视泛型参数的安全检查</li>
+<li>泛型的性能比较差</li>
+</ul>
+</li>
+</ul>
+<h3 id="获取class对象的四种方法"><a href="#获取class对象的四种方法" class="headerlink" title="获取class对象的四种方法"></a>获取class对象的四种方法</h3><ul>
+<li>知道具体类的情况下：Test test &#x3D; Test.class;</li>
+<li>通过class.forName()传入类的全路径获取：Class test &#x3D; class.forName(“com.milkboy.Test”)</li>
+<li>通过实例对象的getClass方法获得：Test test &#x3D; test.getClass()</li>
+<li>通过类加载器传入路径获取：Class test &#x3D; ClassLoader.getSystemClassLoader().loadClass(“com.milkboy.Test”);</li>
+</ul>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><ul>
+<li>注解是JDK5引入的一种新特性，可以看做做是一种特殊的注释，主要用于修饰类、方法捉着变量，提供某些信息供程序在编译或者运行时使用</li>
+<li>注解的本质是继承了一个Annomation接口</li>
+</ul>
+<h4 id="注解的解析方法"><a href="#注解的解析方法" class="headerlink" title="注解的解析方法"></a>注解的解析方法</h4><ul>
+<li>编译期直接扫描：编译器在编译Java代码的时候扫描对应的注解并处理</li>
+<li>运行期通过反射处理：例如@Value、@Component都是通过反射处理的</li>
+</ul>
+<h3 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h3><ul>
+<li>服务提供者接口：专门提供给服务者或者框架功能开发者去使用的一个接口，SPI将服务接口和具体的服务实现分离开来，将服务调用方和服务实现着解耦，能够提升程序的扩展性、可维护性。</li>
+</ul>
+<h4 id="SPI和API的区别"><a href="#SPI和API的区别" class="headerlink" title="SPI和API的区别"></a>SPI和API的区别</h4><ul>
+<li><p><img src="/../picture/image-20230908092121470.png" srcset="/img/loading.gif" lazyload alt="image-20230908092121470"></p>
+</li>
+<li><p><img src="/../picture/image-20230908092140505.png" srcset="/img/loading.gif" lazyload alt="image-20230908092140505"></p>
+</li>
+<li><p>SPI：接口存在于调用方这边时，就是 SPI ，由接口调用方确定接口规则，然后由不同的厂商去根据这个规则对这个接口进行实现，从而提供服务。</p>
+</li>
+</ul>
+<h4 id="SPI的优缺点"><a href="#SPI的优缺点" class="headerlink" title="SPI的优缺点"></a>SPI的优缺点</h4><ul>
+<li>优点：有效提高接口的灵活性</li>
+<li>缺点：<ul>
+<li>遍历加载所有实现类，不能做到按需加载</li>
+<li>当有多个ServiceLoader同时load时，会有并发问题</li>
+</ul>
+</li>
+</ul>
+<h3 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a>序列化和反序列化</h3><ul>
+<li>使用范围：持久化Java对象，比如说将Java对象保存在文件中，或者在网络中传输Java对象都会使用到序列化</li>
+<li>什么是序列化，什么是反序列化<ul>
+<li>序列化：将数据结构或对象转化为二进制字节流的过程</li>
+<li>反序列化：将在序列化过程中所生成的二进制字节流转化成数据结构或对象</li>
+</ul>
+</li>
+<li>Java中序列化的都是对象的实例</li>
+</ul>
+<h4 id="序列化和反序列化的应用场景"><a href="#序列化和反序列化的应用场景" class="headerlink" title="序列化和反序列化的应用场景"></a>序列化和反序列化的应用场景</h4><ul>
+<li>对象在网络中传输时先序列化，接受到序列化之后的对象的时候再反序列化</li>
+<li>将对象存储在文件之前序列化，从文件中提取的时候再反序列化</li>
+<li>将对象存储在数据库(Redis)之前序列化，从数据库中读取出来的时候再反序列化</li>
+<li>将对象存储在内存之前要进行序列化，从内存中读取的时候再反序列化</li>
+</ul>
+<blockquote>
+<p><strong>序列化的主要目的是通过网络传输对象或者说是将对象存储到文件系统、数据库、内存中。</strong></p>
+</blockquote>
+<ul>
+<li>在计算机网络的7层模型中，序列化在表示层，在4层网络模型中在应用层</li>
+</ul>
+<h4 id="Java常见序列化协议"><a href="#Java常见序列化协议" class="headerlink" title="Java常见序列化协议"></a>Java常见序列化协议</h4><ul>
+<li>Java自带序列化的方式：实现Serializable接口</li>
+<li>如果不想序列化的字段，可以使用transient关键字来修饰<ul>
+<li>使用transient修饰的变量，反序列化以后会变成这个变量的默认值</li>
+</ul>
+</li>
+</ul>
+<h4 id="不使用Java自带序列化工具的原因"><a href="#不使用Java自带序列化工具的原因" class="headerlink" title="不使用Java自带序列化工具的原因"></a>不使用Java自带序列化工具的原因</h4><ul>
+<li>不支持跨语言调用</li>
+<li>性能差</li>
+<li>存在安全问题</li>
+</ul>
+<h4 id="推荐使用kryo序列化和反序列化工具"><a href="#推荐使用kryo序列化和反序列化工具" class="headerlink" title="推荐使用kryo序列化和反序列化工具"></a>推荐使用kryo序列化和反序列化工具</h4><ul>
+<li>Kryo是一个高性能序列化工具，拥有变长存储的特性，并使用了字节码生成机制，拥有较高的运行速度和较小的字节码体积</li>
+</ul>
+<h3 id="I-x2F-O流"><a href="#I-x2F-O流" class="headerlink" title="I&#x2F;O流"></a>I&#x2F;O流</h3><ul>
+<li>输入和输出</li>
+</ul>
+<h3 id="Java语法糖"><a href="#Java语法糖" class="headerlink" title="Java语法糖"></a>Java语法糖</h3><ul>
+<li>泛型、自动拆箱和装箱、变长参数、枚举、内部类、增强for循环、try-with-resources 语法、lambda 表达式等</li>
+</ul>
+<h1 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h1><h2 id="Java集合一"><a href="#Java集合一" class="headerlink" title="Java集合一"></a>Java集合一</h2><h3 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h3><ul>
+<li>Java集合也叫容器，主要是由两个接口派生而来的，一个是Collection接口，主要是存放单一元素，另一个是Map，主要是存放键值对的</li>
+</ul>
+<h3 id="List、Set、Queue、Map的区别"><a href="#List、Set、Queue、Map的区别" class="headerlink" title="List、Set、Queue、Map的区别"></a>List、Set、Queue、Map的区别</h3><ul>
+<li>List：存放单一元素，存储顺序是有序的，可重复的</li>
+<li>Set：存放独一无二的元素，存储顺序是不可重复的</li>
+<li>Queue：队列，先进先出，存储顺序是有序且可重复的</li>
+<li>Map：存储键值对</li>
+</ul>
+<h3 id="底层数据结构"><a href="#底层数据结构" class="headerlink" title="底层数据结构"></a>底层数据结构</h3><ul>
+<li>List：<ul>
+<li>ArrayList：Object[]数组</li>
+<li>LinkedList：双向链表</li>
+<li>Vector：Object[]数组</li>
+</ul>
+</li>
+<li>Set：<ul>
+<li>HashSet：底层HashMap</li>
+<li>LinkedHashSet：LinkedHashMap</li>
+<li>TreeSet：（有序、唯一）红黑树</li>
+</ul>
+</li>
+<li>Map：<ul>
+<li>HashMap：<ul>
+<li>jkd1.8之前使用数组加链表实现，数组是主题，链表则是为了解决哈希冲突</li>
+<li>jdk1.8之后解决哈希冲突发生了变化，当链表长度大于8时会将立案标准转化成转化成红黑树，减少搜索时间（自平衡二叉树），如果当数组长度小于64会先进行数组扩容，而不是先转化成红黑树</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="如何选用集合"><a href="#如何选用集合" class="headerlink" title="如何选用集合"></a>如何选用集合</h3><ul>
+<li>根据业务场景需要，选择对应存储结构的数据结构存储</li>
+</ul>
+<h3 id="为什么要使用集合"><a href="#为什么要使用集合" class="headerlink" title="为什么要使用集合"></a>为什么要使用集合</h3><ul>
+<li>集合大小可变、支持泛型、提供多种内置方法，提高了数据存储和处理的灵活性</li>
+</ul>
+<h3 id="ArrayList和Array的区别"><a href="#ArrayList和Array的区别" class="headerlink" title="ArrayList和Array的区别"></a>ArrayList和Array的区别</h3><ul>
+<li>ArrayList：使用Object[]动态数组实现</li>
+<li>ArrayList：会根据实际存储的元素动态扩容，而Array创建之后就不会扩容了</li>
+<li>ArrayList：可以使用泛型，而Array却不可以</li>
+<li>ArrayList：只能存储对象，对于基本数据类型，只能使用其包装类</li>
+<li>ArrayList：提供了丰富的插入、删除、遍历等操作，而Array只是一个数组</li>
+<li>ArrayList：创建时不需要指定大小，而Array创建时必须指定大小</li>
+</ul>
+<h3 id="ArrayList和Vector的区别"><a href="#ArrayList和Vector的区别" class="headerlink" title="ArrayList和Vector的区别"></a>ArrayList和Vector的区别</h3><ul>
+<li>ArrayList是List的主要实现类，底层使用Object[]存储，适用于查找工作，不安全</li>
+<li>Vector是List的古老实现类，底层使用Object[]存储，线程安全（使用synchronized关键字进行了同步处理）</li>
+</ul>
+<h3 id="ArrayList插入数据的时间复杂度"><a href="#ArrayList插入数据的时间复杂度" class="headerlink" title="ArrayList插入数据的时间复杂度"></a>ArrayList插入数据的时间复杂度</h3><ul>
+<li>插入<ul>
+<li>头部插入：后面的所有位置都要移动，O(n)</li>
+<li>尾部插入：<ul>
+<li>未达到容量上限O(1)</li>
+<li>达到容量上限需要扩容时，O(n) —&gt; O(1)</li>
+<li>指定位置插入O(n)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>删除<ul>
+<li>头部O(n)</li>
+<li>尾部O(1)</li>
+<li>指定位置O(n)</li>
+</ul>
+</li>
+</ul>
+<h3 id="LinkedList插入和删除的时间复杂度"><a href="#LinkedList插入和删除的时间复杂度" class="headerlink" title="LinkedList插入和删除的时间复杂度"></a>LinkedList插入和删除的时间复杂度</h3><ul>
+<li>头部：只需要修改头结点O(1)</li>
+<li>尾部：只需要修改尾结点O(1)</li>
+<li>指定位置插入删除：O(n)</li>
+</ul>
+<h3 id="为什么LinkedList不能实现RandomAccess接口"><a href="#为什么LinkedList不能实现RandomAccess接口" class="headerlink" title="为什么LinkedList不能实现RandomAccess接口"></a>为什么LinkedList不能实现RandomAccess接口</h3><ul>
+<li>RandomAccess是一个标记接口，用来表明实现该接口的类支持随机访问（通过索引快速访问元素），而LinkedList底层数据结构是链表，内存地址不连续，只能通过指针来访问，不支持快速访问，所以不能实现RandomAccess接口</li>
+</ul>
+<h3 id="LinkedList和ArrayList的区别"><a href="#LinkedList和ArrayList的区别" class="headerlink" title="LinkedList和ArrayList的区别"></a>LinkedList和ArrayList的区别</h3><ul>
+<li>线程安全：都不安全</li>
+<li>底层数据结构：LinkedList是双向链表，ArrayList是Object数组</li>
+<li>插入删除元素位置是否受影响<ul>
+<li>ArrayList：数组存储</li>
+<li>LinkedList：链表存储</li>
+</ul>
+</li>
+<li>是否支持快速访问：<ul>
+<li>ArrayList：实现了RandomAccess接口，支持快速访问</li>
+<li>LinkedList：没有实现RandomAccess接口，不支持快速访问</li>
+</ul>
+</li>
+<li>内存占用空间：<ul>
+<li>ArrayList：预留空间浪费</li>
+<li>LinkedList：每一个元素消耗的更多</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>项目中一般不使用LinkedList，一般都用ArrayList</p>
+</blockquote>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><ul>
+<li>Java实现排序的方式<ul>
+<li>Compareable接口<ul>
+<li>重写compareTo方法</li>
+</ul>
+</li>
+<li>Comparator接口<ul>
+<li>重写compare方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="无重复性和不可重复性"><a href="#无重复性和不可重复性" class="headerlink" title="无重复性和不可重复性"></a>无重复性和不可重复性</h3><ul>
+<li>无重复性：不按照数组索引顺序添加，而是根据数据的哈希值决定</li>
+<li>不可重复性：添加的元素按照equals()判断，返回false，同时重写equals方法和hashCode方法</li>
+</ul>
+<h3 id="HashSet、LinkedHashSet、TreeSet三者的区别"><a href="#HashSet、LinkedHashSet、TreeSet三者的区别" class="headerlink" title="HashSet、LinkedHashSet、TreeSet三者的区别"></a>HashSet、LinkedHashSet、TreeSet三者的区别</h3><ul>
+<li>都是Set接口的实现类，都无重复性，都是现成安全的</li>
+<li>底层数据结构不同<ul>
+<li>HashSet底层数据结构是哈希表（基于HashMap实现）</li>
+<li>LinkedHashSet底层数据结构是链表和哈希表，元素的插入和取出顺序满足先进先出</li>
+<li>TreeSet底层数据结构是红黑树，元素有序</li>
+</ul>
+</li>
+<li>应用场景不同<ul>
+<li>HashSet不需要保证元素的插入和取出顺序</li>
+<li>LinkedHashSet：保证元素的插入和取出顺序满足FIFO的场景</li>
+<li>TreeSet用于支持对元素自定义排序规则的场景</li>
+</ul>
+</li>
+</ul>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><h4 id="Queue和Deque的区别"><a href="#Queue和Deque的区别" class="headerlink" title="Queue和Deque的区别"></a>Queue和Deque的区别</h4><ul>
+<li>Queue：单端队列：元素只能从一端插入，从另一端删除，遵循先进先出的原则</li>
+<li>当容量问题操作失败时，会有两种不同的结果</li>
+<li><img src="/../picture/image-20230913093151716.png" srcset="/img/loading.gif" lazyload alt="image-20230913093151716"></li>
+<li>Deque：双端队列，两端都可以插入和删除</li>
+<li><img src="/../picture/image-20230913093332370.png" srcset="/img/loading.gif" lazyload alt="image-20230913093332370"></li>
+</ul>
+<h3 id="ArrayDeque和LinkedList的区别"><a href="#ArrayDeque和LinkedList的区别" class="headerlink" title="ArrayDeque和LinkedList的区别"></a>ArrayDeque和LinkedList的区别</h3><ul>
+<li>相同点：都实现了Deque接口，都具有队列的功能</li>
+<li>不同点：<ul>
+<li>底层数据结构：ArrayDeque底层是可变长的数组和双指针，LinkedList底层是链表</li>
+<li>ArrayDeque不支持存储null，LinkedList支持</li>
+<li>ArrayDeque插入过程需要扩容，LinkedList不需要，但是需要申请新的堆空间，ArrayList性能相对更好一点</li>
+</ul>
+</li>
+</ul>
+<h3 id="PriorityQueue-小顶堆"><a href="#PriorityQueue-小顶堆" class="headerlink" title="PriorityQueue 小顶堆"></a>PriorityQueue 小顶堆</h3><ul>
+<li>优先级高的元素先出队</li>
+<li>现成不安全</li>
+<li>小顶堆，可以接受一个Comparator构造参数，实现大顶堆</li>
+</ul>
+<h3 id="BlockingQueue"><a href="#BlockingQueue" class="headerlink" title="BlockingQueue"></a>BlockingQueue</h3><ul>
+<li>阻塞队列，是一个接口，继承自Queue，如果队列没有元素，一直阻塞，如果队列已满，需要等到可以放入新元素的时候再放入，常用于生产者消费者模型</li>
+</ul>
+<h3 id="ArrayBlockQueue和LinkedBlockQueue有什么区别"><a href="#ArrayBlockQueue和LinkedBlockQueue有什么区别" class="headerlink" title="ArrayBlockQueue和LinkedBlockQueue有什么区别"></a>ArrayBlockQueue和LinkedBlockQueue有什么区别</h3><ul>
+<li>底层实现：ArrayBlockQueue是数组，LinkedBlockQueue是链表</li>
+<li>ArrayBlockQueue有边界，创建的时候需要制定大小，而LinkedBlockQueue不需要</li>
+<li>ArrayBlockQueue中的锁是没有分离的，而LinkedBlockQueue是所分离的</li>
+<li>ArrayBlockQueue需要提前分配数组内存，而LinkedBlockQueue不需要</li>
+</ul>
+<h2 id="集合二"><a href="#集合二" class="headerlink" title="集合二"></a>集合二</h2><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h4><ul>
+<li>线程安全：HashMap是不安全的，HashTable是安全的（内部使用synchronized修饰）</li>
+<li>效率：HashMap效率更高</li>
+<li>初始容量和扩容量：<ul>
+<li>创建时不指定容量<ul>
+<li>Hashtable初始容量大小是11，每次扩容2n+1</li>
+<li>HashMap初始容量大小是16，每次扩容2n</li>
+</ul>
+</li>
+<li>创建时指定容量：<ul>
+<li>Hashtable直接使用给定大小</li>
+<li>HashMap会将其扩充为2的幂次方的大小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>底层数据结构：<ul>
+<li>HashMap：数组+链表&#x2F;数组+红黑树</li>
+</ul>
+</li>
+</ul>
+<h4 id="HashMap和HashSet的区别"><a href="#HashMap和HashSet的区别" class="headerlink" title="HashMap和HashSet的区别"></a>HashMap和HashSet的区别</h4><ul>
+<li>HashSet底层基于HashMap实现</li>
+<li><img src="/../picture/image-20230913111406846.png" srcset="/img/loading.gif" lazyload alt="image-20230913111406846"></li>
+</ul>
+<h4 id="HashMap和TreeMap的区别"><a href="#HashMap和TreeMap的区别" class="headerlink" title="HashMap和TreeMap的区别"></a>HashMap和TreeMap的区别</h4><ul>
+<li><p>都集成自AbstractMap接口</p>
+</li>
+<li><p>TreeMap还实现了NavigableMap接口和SortedMap接口</p>
+<ul>
+<li><p>NavigableMap接口：使TreeMap接口有了对集合内元素的搜索能力</p>
+</li>
+<li><p>SortedMap接口：有了对集合中元素根据键排序的能力，也可以实现自定义排序</p>
+</li>
+<li><pre><code class="java">/**
+ * @author shuang.kou
+ * @createTime 2020年06月15日 17:02:00
+ */
+public class Person &#123;
+    private Integer age;
+
+    public Person(Integer age) &#123;
+        this.age = age;
+    &#125;
+
+    public Integer getAge() &#123;
+        return age;
+    &#125;
+
+
+    public static void main(String[] args) &#123;
+        TreeMap&lt;Person, String&gt; treeMap = new TreeMap&lt;&gt;(new Comparator&lt;Person&gt;() &#123;
+            @Override
+            public int compare(Person person1, Person person2) &#123;
+                int num = person1.getAge() - person2.getAge();
+                return Integer.compare(num, 0);
+            &#125;
+        &#125;);
+        treeMap.put(new Person(3), &quot;person1&quot;);
+        treeMap.put(new Person(18), &quot;person2&quot;);
+        treeMap.put(new Person(35), &quot;person3&quot;);
+        treeMap.put(new Person(16), &quot;person4&quot;);
+        treeMap.entrySet().stream().forEach(personStringEntry -&gt; &#123;
+            System.out.println(personStringEntry.getValue());
+        &#125;);
+    &#125;
+&#125;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="HashSet如何检查重复"><a href="#HashSet如何检查重复" class="headerlink" title="HashSet如何检查重复"></a>HashSet如何检查重复</h3><ul>
+<li>先判断HashCode是否相等</li>
+<li>如果相等再调用equals()方法来判断</li>
+</ul>
+<h3 id="HashMap的底层实现"><a href="#HashMap的底层实现" class="headerlink" title="HashMap的底层实现"></a>HashMap的底层实现</h3><ul>
+<li>JDK1.8之前：HashMap底层是数组和链表，先通过hashcode得到hash值，然后通过(n-1)&amp;hash判断当前位置是否存在元素，如果存在元素，则判断该元素与需要存入hash值的元素的key是否相同，相同就覆盖，不相同就通过拉链法解决冲突</li>
+<li>JDK1.8之后，当链表长度大于8时，判断一下数组长度，如果当前数组长度小于64，先进行数组扩容，如果数组长度大于64，则先将链表转化成红黑树，以减少搜索时间</li>
+</ul>
+<h3 id="HashMap的长度为什么是2的幂次方"><a href="#HashMap的长度为什么是2的幂次方" class="headerlink" title="HashMap的长度为什么是2的幂次方"></a>HashMap的长度为什么是2的幂次方</h3><h3 id="HashMap多线程操作导致死循环问题"><a href="#HashMap多线程操作导致死循环问题" class="headerlink" title="HashMap多线程操作导致死循环问题"></a>HashMap多线程操作导致死循环问题</h3><ul>
+<li>在JDK1.8之前，当一个桶位中有多个元素需要进行扩容时，多个线程同时操作链表，头插法可能会指向链表中错误的位置，所以JDK11.9之后会使用尾插法，不过不建议多线程环境下使用HashMap，可能会造成数据覆盖问题</li>
+</ul>
+<h3 id="HashMap为什么线程不安全"><a href="#HashMap为什么线程不安全" class="headerlink" title="HashMap为什么线程不安全"></a>HashMap为什么线程不安全</h3><ul>
+<li>当两个线程同时对一个桶中的数据进行put操作，线程1执行完哈希冲突判断，时间片消耗完了，线程2插入数据，线程1再插入，覆盖掉了线程2的数据</li>
+</ul>
+<h3 id="CurrentHashMap和HashTable的区别"><a href="#CurrentHashMap和HashTable的区别" class="headerlink" title="CurrentHashMap和HashTable的区别"></a>CurrentHashMap和HashTable的区别</h3><ul>
+<li>底层数据结构：HashMap：数组+链表&#x2F;二叉树</li>
+<li>实现线程安全的方式：<ul>
+<li>jdk1.7之前：ConcurrentHashMap对整个桶进行了分割操作，每一把锁只加锁其中一部分数据，多线程访问容器里不同的数据段的数据，就会存在锁竞争</li>
+<li>jdk1.8之后：并发控制使用synchronized和cas操作</li>
+<li>hashtable（同一把锁）：synchronized来控制，效率低</li>
+</ul>
+</li>
+</ul>
+<h2 id="集合注意事项"><a href="#集合注意事项" class="headerlink" title="集合注意事项"></a>集合注意事项</h2><h3 id="集合判空"><a href="#集合判空" class="headerlink" title="集合判空"></a>集合判空</h3><ul>
+<li>使用isEmpty，不使用size&#x3D;&#x3D;0</li>
+<li>isEmpty可读性更好</li>
+</ul>
+<h3 id="集合转Map"><a href="#集合转Map" class="headerlink" title="集合转Map"></a>集合转Map</h3><ul>
+<li>Collections.toMap</li>
+</ul>
+<h3 id="遍历集合"><a href="#遍历集合" class="headerlink" title="遍历集合"></a>遍历集合</h3><h3 id="集合去重"><a href="#集合去重" class="headerlink" title="集合去重"></a>集合去重</h3><ul>
+<li>使用set特性去重</li>
+</ul>
+<h3 id="集合转数组"><a href="#集合转数组" class="headerlink" title="集合转数组"></a>集合转数组</h3><ul>
+<li>Arrays.asList()</li>
+<li>list.toArray()</li>
+</ul>
+<p><img src="/../picture/image-20230918215811209.png" srcset="/img/loading.gif" lazyload alt="image-20230918215811209"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/19/JUC/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/13/Java%E7%A7%92%E6%9D%80%E9%A1%B9%E7%9B%AE/" title="">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'milkguy/comment-utterance');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
