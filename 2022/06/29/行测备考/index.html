@@ -16,16 +16,16 @@
   <meta name="author" content="贾利凯">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇文章讲述了Java多线程入门指北">
+    <meta name="description" content="言语   数据采集与整理：首要任务是采集社交媒体平台上由这些模型生成的文本和图像数据。这包括获取数据样本，建立数据集，以便进行深入的分析。 检测工具开发：虽然研究目标侧重于分析，但我们需要开发一定的检测工具来获取可分析的数据。这包括设计和实施自然语言处理和计算机视觉技术，以辅助数据的获取。这些工具将用于采集、分类和组织数据，使其可供进一步研究。 内容特点分析：对模型生成的内容进行全面的特点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java多线程入门指北">
-<meta property="og:url" content="http://example.com/2023/04/20/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:title" content="《我的第一篇博客》">
+<meta property="og:url" content="http://example.com/2022/06/29/%E8%A1%8C%E6%B5%8B%E5%A4%87%E8%80%83/index.html">
 <meta property="og:site_name" content="贾利凯的博客">
-<meta property="og:description" content="本篇文章讲述了Java多线程入门指北">
+<meta property="og:description" content="言语   数据采集与整理：首要任务是采集社交媒体平台上由这些模型生成的文本和图像数据。这包括获取数据样本，建立数据集，以便进行深入的分析。 检测工具开发：虽然研究目标侧重于分析，但我们需要开发一定的检测工具来获取可分析的数据。这包括设计和实施自然语言处理和计算机视觉技术，以辅助数据的获取。这些工具将用于采集、分类和组织数据，使其可供进一步研究。 内容特点分析：对模型生成的内容进行全面的特点">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
-<meta property="article:published_time" content="2023-04-20T06:27:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T11:23:01.000Z">
+<meta property="article:published_time" content="2022-06-29T08:40:24.000Z">
+<meta property="article:modified_time" content="2024-02-07T09:01:08.290Z">
 <meta property="article:author" content="贾利凯">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java多线程入门指北 - 贾利凯的博客</title>
+  <title>《我的第一篇博客》 - 贾利凯的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java多线程入门指北"></span>
+            <span id="subtitle" data-typed-text="《我的第一篇博客》"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-20 14:27" pubdate>
-          2023年4月20日 下午
+        <time datetime="2022-06-29 16:40" pubdate>
+          2022年6月29日 下午
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          977 字
+          709 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          9 分钟
+          6 分钟
         
       </span>
     
@@ -302,12 +302,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java多线程入门指北</h1>
+            <h1 style="display: none">《我的第一篇博客》</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 个月前
+                    本文最后更新于：9 分钟前
                   
                 
               </p>
@@ -315,42 +315,36 @@
             
               <div class="markdown-body">
                 
-                <p>本篇文章讲述了Java多线程入门指北</p>
-<span id="more"></span>
+                <span id="more"></span>
 
-<h2 id="什么是进程、线程？"><a href="#什么是进程、线程？" class="headerlink" title="什么是进程、线程？"></a>什么是进程、线程？</h2><p><strong>线程是处理器任务调度和执行的基本单位，进程是操作系统资源分配的基本单位。</strong></p>
-<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>​	进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。在 Java 中，当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</p>
-<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>​	一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享进程的<strong>堆</strong>和<strong>方法区</strong>资源，但每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
-<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><ul>
-<li><p>内存分配：进程之间的地址空间和资源是相互独立的，同一个进程之间的线程会共享线程的地址空间和资源（堆和方法区）。 </p>
-</li>
-<li><p>资源开销：每个进程具备各自的数据空间，进程之间的切换会有较大的开销。属于同一进程的线程会共享堆和方法区，同时具备私有的虚拟机栈、本地方法栈、程序计数器，线程之间的切换资源开销较小。</p>
-</li>
+
+
+<h2 id="言语"><a href="#言语" class="headerlink" title="言语"></a>言语</h2><p><img src="/../picture/image-20231018093140502.png" srcset="/img/loading.gif" lazyload alt="image-20231018093140502"></p>
+<p><img src="/../picture/image-20231018163842169.png" srcset="/img/loading.gif" lazyload alt="image-20231018163842169"></p>
+<ul>
+<li>数据采集与整理：首要任务是采集社交媒体平台上由这些模型生成的文本和图像数据。这包括获取数据样本，建立数据集，以便进行深入的分析。</li>
+<li>检测工具开发：虽然研究目标侧重于分析，但我们需要开发一定的检测工具来获取可分析的数据。这包括设计和实施自然语言处理和计算机视觉技术，以辅助数据的获取。这些工具将用于采集、分类和组织数据，使其可供进一步研究。</li>
+<li>内容特点分析：对模型生成的内容进行全面的特点分析，包括文本和图像的语义、情感、风格和真实性。这有助于我们理解这些内容的本质，以及它们如何影响社交媒体用户。</li>
+<li>滥用情况调查：通过深入分析数据，我们将识别和量化这些模型在社交媒体上的滥用情况。这将包括虚假信息、深度伪造内容、恶意操作等的检测与分类。我们将关注这些滥用情况的趋势、频率和影响。</li>
+<li>舆论误导分析：我们将研究模型生成的内容如何与社交媒体用户的观点和行为互动，以评估它们是否对舆论产生误导作用。这将涵盖虚假信息扩散、社交媒体动态和用户行为的分析。</li>
+<li>发布者信息和地域关联分析：我们将探索生成内容的发布者信息和地域关联，以揭示是否存在特定地区或组织与这些内容的关联性。这有助于我们了解滥用背后的可能动机和来源。</li>
+<li>安全策略建议：最后，通过深入分析的结果，我们将提出针对性的安全策略建议。这包括改进社交平台的内容过滤和审核机制，提高用户教育和安全意识，以及采取措施减少虚假信息传播的可能性。</li>
 </ul>
-<h2 id="并发和并行的区别："><a href="#并发和并行的区别：" class="headerlink" title="并发和并行的区别："></a>并发和并行的区别：</h2><ul>
-<li>并发：一个处理器处理多个任务，按时间片轮流处理多个任务（轮流执行）</li>
-<li>并行：单位时间多个处理器同时处理多个任务（同时执行）</li>
-</ul>
-<h2 id="同步和异步的区别："><a href="#同步和异步的区别：" class="headerlink" title="同步和异步的区别："></a>同步和异步的区别：</h2><ul>
-<li><strong>同步</strong> ： 发出一个调用之后，在没有得到结果之前， 该调用就不可以返回，一直等待。</li>
-<li><strong>异步</strong> ：调用在发出之后，不用等待返回结果，该调用直接返回。</li>
-</ul>
-<h2 id="多线程的优缺点："><a href="#多线程的优缺点：" class="headerlink" title="多线程的优缺点："></a>多线程的优缺点：</h2><ul>
-<li>优点：<ul>
-<li>提高程序的执行效率提高程序运行速度</li>
-<li>当一个线程进入等待状态或者阻塞时，CPU可以先去执行其他线程，提高CPU的利用率。</li>
-</ul>
-</li>
-<li>缺点：<ul>
-<li>频繁的上下文切换会影响多线程的执行速度。</li>
-<li>死锁</li>
-<li>线程不安全</li>
-<li>内存泄露</li>
-</ul>
-</li>
-</ul>
-<h2 id="线程的上下文切换"><a href="#线程的上下文切换" class="headerlink" title="线程的上下文切换"></a>线程的上下文切换</h2><p>​	线程在执行过程中会有自己的运行条件和状态（也称上下文），比如上文所说到过的程序计数器，栈信息等。即便是单核的处理器也会支持多线程，处理器会给每个线程分配CPU时间片来实现这个机制。时间片是CPU分配给每个线程的执行时间，一般来说时间片非常的短，所以处理器会不停地切换线程。</p>
-<p>​	CPU会通过时间片分配算法来循环执行任务，当前任务执行完一个时间片后会切换到下一个任务，但切换前会保存上一个任务的状态，因为下次切换回这个任务时还要加载这个任务的状态继续执行，从任务保存到在加载的过程就是一次上下文切换。</p>
+<p>10 13</p>
+<p>11 14</p>
+<p>12 15</p>
+<p>13 16</p>
+<p>14 17</p>
+<p>15 18</p>
+<p>16 19</p>
+<p><strong>设置初始账号，admin，123456</strong></p>
+<p><strong>登录进来以后，点断口，跳进来的界面是我的，不是录入</strong></p>
+<p><strong>识别完以后，如果没识别出来，给前端提示信息</strong></p>
+<p><strong>重新上传，清除上一张图片的信息</strong></p>
+<p><strong>加虚框</strong></p>
+<p>面积优化</p>
+<p>速度提升</p>
+<p>1231009-7</p>
 
                 
               </div>

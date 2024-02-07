@@ -16,16 +16,16 @@
   <meta name="author" content="贾利凯">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇文章讲述了Java多线程入门指北">
+    <meta name="description" content="JUC CopyOnWriteArrayList()线程安全数组 Lock  ![image-20230917172425407](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917172425407.png)  原子性 lock">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java多线程入门指北">
-<meta property="og:url" content="http://example.com/2023/04/20/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:title" content="《我的第一篇博客》">
+<meta property="og:url" content="http://example.com/2022/06/29/JUC/index.html">
 <meta property="og:site_name" content="贾利凯的博客">
-<meta property="og:description" content="本篇文章讲述了Java多线程入门指北">
+<meta property="og:description" content="JUC CopyOnWriteArrayList()线程安全数组 Lock  ![image-20230917172425407](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917172425407.png)  原子性 lock">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
-<meta property="article:published_time" content="2023-04-20T06:27:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T11:23:01.000Z">
+<meta property="article:published_time" content="2022-06-29T08:40:24.000Z">
+<meta property="article:modified_time" content="2024-02-07T09:01:42.963Z">
 <meta property="article:author" content="贾利凯">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java多线程入门指北 - 贾利凯的博客</title>
+  <title>《我的第一篇博客》 - 贾利凯的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java多线程入门指北"></span>
+            <span id="subtitle" data-typed-text="《我的第一篇博客》"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-20 14:27" pubdate>
-          2023年4月20日 下午
+        <time datetime="2022-06-29 16:40" pubdate>
+          2022年6月29日 下午
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          977 字
+          4k 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          9 分钟
+          34 分钟
         
       </span>
     
@@ -302,12 +302,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java多线程入门指北</h1>
+            <h1 style="display: none">《我的第一篇博客》</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 个月前
+                    本文最后更新于：9 分钟前
                   
                 
               </p>
@@ -315,42 +315,157 @@
             
               <div class="markdown-body">
                 
-                <p>本篇文章讲述了Java多线程入门指北</p>
-<span id="more"></span>
+                <span id="more"></span>
 
-<h2 id="什么是进程、线程？"><a href="#什么是进程、线程？" class="headerlink" title="什么是进程、线程？"></a>什么是进程、线程？</h2><p><strong>线程是处理器任务调度和执行的基本单位，进程是操作系统资源分配的基本单位。</strong></p>
-<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>​	进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。在 Java 中，当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</p>
-<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>​	一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享进程的<strong>堆</strong>和<strong>方法区</strong>资源，但每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
-<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><ul>
-<li><p>内存分配：进程之间的地址空间和资源是相互独立的，同一个进程之间的线程会共享线程的地址空间和资源（堆和方法区）。 </p>
+
+
+<h2 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h2><ul>
+<li>CopyOnWriteArrayList()线程安全数组</li>
+<li>Lock</li>
+</ul>
+<p>![image-20230917172425407](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917172425407.png)</p>
+<ul>
+<li>原子性</li>
+<li>lock 锁</li>
+</ul>
+<h2 id="什么是JUC"><a href="#什么是JUC" class="headerlink" title="什么是JUC"></a>什么是JUC</h2><ul>
+<li>工具包</li>
+<li>包、分类</li>
+</ul>
+<p>![image-20230917172831390](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917172831390.png)</p>
+<p>创建多线程方式的实现Callable接口就在juc包下</p>
+<ul>
+<li>locks锁</li>
+</ul>
+<p>![image-20230917172930579](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917172930579.png)</p>
+<h2 id="线程和进程"><a href="#线程和进程" class="headerlink" title="线程和进程"></a>线程和进程</h2><ul>
+<li><p>进程：程序的集合</p>
+<ul>
+<li>一个进程可以包含多个线程</li>
+<li>至少包含一个线程</li>
+<li>Java默认有2个线程，main线程，gc线程</li>
+</ul>
 </li>
-<li><p>资源开销：每个进程具备各自的数据空间，进程之间的切换会有较大的开销。属于同一进程的线程会共享堆和方法区，同时具备私有的虚拟机栈、本地方法栈、程序计数器，线程之间的切换资源开销较小。</p>
+<li><p>Thread、Runnable、Callable、线程池</p>
+</li>
+<li><p>Java开不了线程，native本地方法去调，调用底层c++，本地线程</p>
 </li>
 </ul>
-<h2 id="并发和并行的区别："><a href="#并发和并行的区别：" class="headerlink" title="并发和并行的区别："></a>并发和并行的区别：</h2><ul>
-<li>并发：一个处理器处理多个任务，按时间片轮流处理多个任务（轮流执行）</li>
-<li>并行：单位时间多个处理器同时处理多个任务（同时执行）</li>
+<h2 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h2><ul>
+<li>并发：一段时间同时操作，快速交替，单核</li>
+<li>并行：同一时刻，多核</li>
 </ul>
-<h2 id="同步和异步的区别："><a href="#同步和异步的区别：" class="headerlink" title="同步和异步的区别："></a>同步和异步的区别：</h2><ul>
-<li><strong>同步</strong> ： 发出一个调用之后，在没有得到结果之前， 该调用就不可以返回，一直等待。</li>
-<li><strong>异步</strong> ：调用在发出之后，不用等待返回结果，该调用直接返回。</li>
-</ul>
-<h2 id="多线程的优缺点："><a href="#多线程的优缺点：" class="headerlink" title="多线程的优缺点："></a>多线程的优缺点：</h2><ul>
-<li>优点：<ul>
-<li>提高程序的执行效率提高程序运行速度</li>
-<li>当一个线程进入等待状态或者阻塞时，CPU可以先去执行其他线程，提高CPU的利用率。</li>
+<h2 id="并发本质：充分利用CPU资源"><a href="#并发本质：充分利用CPU资源" class="headerlink" title="并发本质：充分利用CPU资源"></a>并发本质：充分利用CPU资源</h2><h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><ul>
+<li>wait和sleep的区别<ul>
+<li>不同的类，wait是Object类，sleep是Thread类，企业中一般用juc下的TimeUnit工具类操作</li>
+<li>锁的释放：wait会释放锁，sleep不会释放</li>
+<li>使用的范围不同：<ul>
+<li>wait：同步代码块</li>
+<li>sleep：任何地方</li>
 </ul>
 </li>
-<li>缺点：<ul>
-<li>频繁的上下文切换会影响多线程的执行速度。</li>
-<li>死锁</li>
-<li>线程不安全</li>
-<li>内存泄露</li>
+<li>是否需要捕获异常：<ul>
+<li>wait：不需要</li>
+<li>sleep：需要</li>
 </ul>
 </li>
 </ul>
-<h2 id="线程的上下文切换"><a href="#线程的上下文切换" class="headerlink" title="线程的上下文切换"></a>线程的上下文切换</h2><p>​	线程在执行过程中会有自己的运行条件和状态（也称上下文），比如上文所说到过的程序计数器，栈信息等。即便是单核的处理器也会支持多线程，处理器会给每个线程分配CPU时间片来实现这个机制。时间片是CPU分配给每个线程的执行时间，一般来说时间片非常的短，所以处理器会不停地切换线程。</p>
-<p>​	CPU会通过时间片分配算法来循环执行任务，当前任务执行完一个时间片后会切换到下一个任务，但切换前会保存上一个任务的状态，因为下次切换回这个任务时还要加载这个任务的状态继续执行，从任务保存到在加载的过程就是一次上下文切换。</p>
+</li>
+</ul>
+<h2 id="Locks锁"><a href="#Locks锁" class="headerlink" title="Locks锁"></a>Locks锁</h2><p>![image-20230917175419259](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917175419259.png)</p>
+<ul>
+<li>ReentrantLock：默认非公平锁<ul>
+<li>new</li>
+<li>加锁 try catch</li>
+<li>解锁</li>
+</ul>
+</li>
+<li>Lock和Synchronized锁的区别</li>
+</ul>
+<p>![image-20230917180348014](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917180348014.png)</p>
+<ul>
+<li>怎样判断锁的是谁</li>
+</ul>
+<h3 id="生产者消费者问题"><a href="#生产者消费者问题" class="headerlink" title="生产者消费者问题"></a>生产者消费者问题</h3><p>![image-20230917200631317](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917200631317.png)</p>
+<p>![image-20230917202037343](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917202037343.png)</p>
+<ul>
+<li>Condition优势：精准通知和唤醒线程<ul>
+<li>![image-20230917203333911](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917203333911.png)</li>
+<li>使用多个监视器进行精准唤醒</li>
+</ul>
+</li>
+</ul>
+<h2 id="8锁现象"><a href="#8锁现象" class="headerlink" title="8锁现象"></a>8锁现象</h2><p> synchronized锁的是方法的调用者</p>
+<p>静态方法锁的是class对象，class模版</p>
+<h2 id="并发数组不安全"><a href="#并发数组不安全" class="headerlink" title="并发数组不安全"></a>并发数组不安全</h2><p>![image-20230917213128970](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917213128970.png)</p>
+<ul>
+<li>Vector</li>
+</ul>
+<p>![image-20230917213513274](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917213513274.png)</p>
+<ul>
+<li>CopyOnWriteList<ul>
+<li>![image-20230917213530518](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917213530518.png)</li>
+</ul>
+</li>
+</ul>
+<p>![image-20230917214036491](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917214036491.png)</p>
+<p>![image-20230917215759224](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917215759224.png)</p>
+<ul>
+<li>hashMap加载因子和初始容量，初始容量16，加载因子0.75</li>
+<li>![image-20230917220342457](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917220342457.png)</li>
+</ul>
+<h2 id="Callable"><a href="#Callable" class="headerlink" title="Callable"></a>Callable</h2><ul>
+<li>可以有返回值，可以抛出异常</li>
+<li>方法不同call()</li>
+</ul>
+<h2 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h2><ul>
+<li>辅助工具类</li>
+<li>减法计数器</li>
+<li>countDowntLatch.countDown减1<ul>
+<li>辅助类</li>
+<li>await等待计数器归零</li>
+<li>必须要执行任务的时候再使用</li>
+<li>原理：</li>
+</ul>
+</li>
+</ul>
+<p>![image-20230917222013988](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917222013988.png)</p>
+<p>![image-20230917222526937](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917222526937.png)</p>
+<ul>
+<li>信号量，限流的时候会用</li>
+<li>![image-20230917222651291](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917222651291.png)</li>
+</ul>
+<p>![image-20230917222808393](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230917222808393.png)</p>
+<ul>
+<li>读写锁：读的时候可以由多个线程操作，写的时候保证了原子性，只能由一个线程操作</li>
+</ul>
+<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><ul>
+<li><p>三大方法</p>
+</li>
+<li><p>七大参数</p>
+<ul>
+<li>核心线程数</li>
+<li>最大线程数</li>
+<li>超时等待数</li>
+<li>队列</li>
+<li>现场工厂</li>
+<li>拒绝策略<ul>
+<li>new AbortPolicy 默认，银行满了，还有人进来，不处理，抛出异常</li>
+<li>CallerRunPolicy 哪来的去哪里</li>
+<li>DiscardPolicy 队列满了，不会抛出异常</li>
+<li>DiscardOldestPolicy 尝试去和第一个竞争，尝试竞争第一个</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>最大承载 &#x3D; 队列 + 最大线程数</p>
+</li>
+<li><p>![image-20230918094821423](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230918094821423.png)</p>
+</li>
+</ul>
+<p>![image-20230918101219830](&#x2F;Users&#x2F;milkboy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20230918101219830.png)</p>
+<p>明天 周二下午面试安排 （ 目前在总体部实习生 明年毕业）7054会议室</p>
+<p>1、贾利凯 14:00 侯茂春<br>2、刘一泽14:25 蒋亚楠<br>3、邓彩叶14:45 刘新顺<br>4、敦晓荣15:05 产品 李亚卓<br>5、茅莹   15:30 李亚卓<br>6、王积慧15:45 刘新顺<br>7、谢镕阳 16:15 叶蔚<br>    请带教老师或者各业务室负责人一定参加，需要进行推荐介绍。</p>
 
                 
               </div>

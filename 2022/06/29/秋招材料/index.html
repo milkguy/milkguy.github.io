@@ -16,16 +16,16 @@
   <meta name="author" content="贾利凯">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇文章讲述了Java多线程入门指北">
+    <meta name="description" content="电子：  简历电子版（已准备） 毕业证，学位证，学历认证报告，电子版（未准备） 应聘人员信息登记表（电子版，纸质版手写签字） 个人综述（500字），word文档 性格测试（已完成） 专业笔试（一会做） 个人出境记录（不提供）  纸质：  大学以上的毕业证、学位证复印件 家庭所有成员户口本复印件 户口所在地开设的无犯罪证明 本人身份证复印件2份 本人护照复印件1份  大模型在军用领域的应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java多线程入门指北">
-<meta property="og:url" content="http://example.com/2023/04/20/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:title" content="《我的第一篇博客》">
+<meta property="og:url" content="http://example.com/2022/06/29/%E7%A7%8B%E6%8B%9B%E6%9D%90%E6%96%99/index.html">
 <meta property="og:site_name" content="贾利凯的博客">
-<meta property="og:description" content="本篇文章讲述了Java多线程入门指北">
+<meta property="og:description" content="电子：  简历电子版（已准备） 毕业证，学位证，学历认证报告，电子版（未准备） 应聘人员信息登记表（电子版，纸质版手写签字） 个人综述（500字），word文档 性格测试（已完成） 专业笔试（一会做） 个人出境记录（不提供）  纸质：  大学以上的毕业证、学位证复印件 家庭所有成员户口本复印件 户口所在地开设的无犯罪证明 本人身份证复印件2份 本人护照复印件1份  大模型在军用领域的应用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
-<meta property="article:published_time" content="2023-04-20T06:27:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T11:23:01.000Z">
+<meta property="article:published_time" content="2022-06-29T08:40:24.000Z">
+<meta property="article:modified_time" content="2024-02-07T09:00:29.132Z">
 <meta property="article:author" content="贾利凯">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java多线程入门指北 - 贾利凯的博客</title>
+  <title>《我的第一篇博客》 - 贾利凯的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java多线程入门指北"></span>
+            <span id="subtitle" data-typed-text="《我的第一篇博客》"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-20 14:27" pubdate>
-          2023年4月20日 下午
+        <time datetime="2022-06-29 16:40" pubdate>
+          2022年6月29日 下午
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          977 字
+          2.3k 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          9 分钟
+          20 分钟
         
       </span>
     
@@ -302,12 +302,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java多线程入门指北</h1>
+            <h1 style="display: none">《我的第一篇博客》</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 个月前
+                    本文最后更新于：10 分钟前
                   
                 
               </p>
@@ -315,42 +315,65 @@
             
               <div class="markdown-body">
                 
-                <p>本篇文章讲述了Java多线程入门指北</p>
-<span id="more"></span>
+                <span id="more"></span>
 
-<h2 id="什么是进程、线程？"><a href="#什么是进程、线程？" class="headerlink" title="什么是进程、线程？"></a>什么是进程、线程？</h2><p><strong>线程是处理器任务调度和执行的基本单位，进程是操作系统资源分配的基本单位。</strong></p>
-<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>​	进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。在 Java 中，当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</p>
-<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>​	一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享进程的<strong>堆</strong>和<strong>方法区</strong>资源，但每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
-<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><ul>
-<li><p>内存分配：进程之间的地址空间和资源是相互独立的，同一个进程之间的线程会共享线程的地址空间和资源（堆和方法区）。 </p>
+
+
+<p>电子：</p>
+<ul>
+<li>简历电子版（已准备）</li>
+<li><strong>毕业证，学位证</strong>，学历认证报告，电子版（未准备）</li>
+<li>应聘人员信息登记表（电子版，纸质版手写签字）</li>
+<li>个人综述（500字），word文档</li>
+<li>性格测试（已完成）</li>
+<li>专业笔试（一会做）</li>
+<li>个人出境记录（不提供）</li>
+</ul>
+<p>纸质：</p>
+<ul>
+<li>大学以上的毕业证、学位证复印件</li>
+<li>家庭所有成员户口本复印件</li>
+<li>户口所在地开设的无犯罪证明</li>
+<li>本人身份证复印件2份</li>
+<li>本人护照复印件1份</li>
+</ul>
+<p>大模型在军用领域的应用</p>
+<p>1、代码代码自动生成：	(1)武器装备的基础代码生成可以通过大模型来实现，提高软件的开发效率，加速武器装备研发进程。(2)生成控制代码，对武器装备生产过程实现精准控制，降低人力成本，提升武器装备的研发效率。2、根据描述自动生成作战仿真程序、文字、视频、模型，速构建作战模拟仿真场景，提升作战仿真能力。</p>
+<p>3、进行情报分析：通过大模型的语言分析能力，提高情报信息的融合处理速度，提高未来在陆、海、空、天、电等多域作战空间所产生的信息洪流的分析能力，辅助作战指挥员针对不同的作战环境快速做出决策。</p>
+<p>4、助力渗透攻击：大模型可以生成海量信息，可以高效生成海量假信息，影响他国民众的价值取向，引导舆论情绪。</p>
+<p>尊敬的各位领导，面试官，大家好：</p>
+<p>我是来自北京邮电大学网络空间安全学院的贾利凯，我的研究方向是区块链技术，我的技术栈是Java后端开发，读研期间，我主要跟着导师做实验室的横向和纵向课题，参与国家重点研发计划等多项课题，我本科毕业于内蒙古科技大学软件工程专业，本科期间，多次参加计算机类科技创新比赛，我的参赛情况在简历的后一页。学习成绩我本科专业第一，获得两次国家奖学金，获得省级三好学生和省级优秀毕业生，研究生期间获得一次北京邮电大学一等奖学金，一次二等奖学金。今年5月来咱们所里网络与信息安全总体部实习</p>
+<ul>
+<li>dataset数据集</li>
+<li>dataload 加载数据</li>
+<li>transformer图像处理<ul>
+<li>compose：合并</li>
+<li>totensor：格式转换</li>
+<li>Normalize：归一化处理</li>
+<li>Resize：修改尺寸</li>
+</ul>
 </li>
-<li><p>资源开销：每个进程具备各自的数据空间，进程之间的切换会有较大的开销。属于同一进程的线程会共享堆和方法区，同时具备私有的虚拟机栈、本地方法栈、程序计数器，线程之间的切换资源开销较小。</p>
-</li>
+<li>transvision：数据集处理</li>
+<li>卷积</li>
+<li>池化</li>
+<li>非线性激活</li>
+<li>线性层</li>
+<li>损失函数和反向传播</li>
+<li>模型评估和预测</li>
 </ul>
-<h2 id="并发和并行的区别："><a href="#并发和并行的区别：" class="headerlink" title="并发和并行的区别："></a>并发和并行的区别：</h2><ul>
-<li>并发：一个处理器处理多个任务，按时间片轮流处理多个任务（轮流执行）</li>
-<li>并行：单位时间多个处理器同时处理多个任务（同时执行）</li>
-</ul>
-<h2 id="同步和异步的区别："><a href="#同步和异步的区别：" class="headerlink" title="同步和异步的区别："></a>同步和异步的区别：</h2><ul>
-<li><strong>同步</strong> ： 发出一个调用之后，在没有得到结果之前， 该调用就不可以返回，一直等待。</li>
-<li><strong>异步</strong> ：调用在发出之后，不用等待返回结果，该调用直接返回。</li>
-</ul>
-<h2 id="多线程的优缺点："><a href="#多线程的优缺点：" class="headerlink" title="多线程的优缺点："></a>多线程的优缺点：</h2><ul>
-<li>优点：<ul>
-<li>提高程序的执行效率提高程序运行速度</li>
-<li>当一个线程进入等待状态或者阻塞时，CPU可以先去执行其他线程，提高CPU的利用率。</li>
-</ul>
-</li>
-<li>缺点：<ul>
-<li>频繁的上下文切换会影响多线程的执行速度。</li>
-<li>死锁</li>
-<li>线程不安全</li>
-<li>内存泄露</li>
-</ul>
-</li>
-</ul>
-<h2 id="线程的上下文切换"><a href="#线程的上下文切换" class="headerlink" title="线程的上下文切换"></a>线程的上下文切换</h2><p>​	线程在执行过程中会有自己的运行条件和状态（也称上下文），比如上文所说到过的程序计数器，栈信息等。即便是单核的处理器也会支持多线程，处理器会给每个线程分配CPU时间片来实现这个机制。时间片是CPU分配给每个线程的执行时间，一般来说时间片非常的短，所以处理器会不停地切换线程。</p>
-<p>​	CPU会通过时间片分配算法来循环执行任务，当前任务执行完一个时间片后会切换到下一个任务，但切换前会保存上一个任务的状态，因为下次切换回这个任务时还要加载这个任务的状态继续执行，从任务保存到在加载的过程就是一次上下文切换。</p>
+<p>[1] 兰祥, 郭瑞, 王俊茗. 电子投票系统中基于区块链的无证书环签密方案[J&#x2F;OL]. 计算机工程与应用: 1-16[2023-09-20]. <a target="_blank" rel="noopener" href="http://kns.cnki.net/kcms/detail/11.2127.">http: &#x2F;&#x2F;kns.cnki.net&#x2F;kcms&#x2F;detail&#x2F; 11. 2127.</a> TP. 20230814. 2014. 024. html.</p>
+<p>[2] 刘红, 张靖宇, 雷梦婷等. 基于区块链的公平和可验证电子投票智能合约[J]. 应用科学学报, 2023, 41(04): 541-562.</p>
+<p>[3] 沈华, 李博轮. 一种基于CP-ABE和区块链的时间锁加密电子投票方案[J&#x2F;OL]. 计算机应用研究: 1-9[2023-09-20]. <a target="_blank" rel="noopener" href="https://doi.org/10.19734/j.issn">https://doi.org/10.19734/j.issn</a>. 1001-3695. 2023. 02. 0108.</p>
+<p>[4] Yao A C. Theory and application of trapdoor functions[C]&#x2F;&#x2F;23rd Annual Symposium on Foundations of Computer Science (SFCS 1982). IEEE, 1982: 80-91.</p>
+<p>[5] Murugeshwari B, Selvaraj D, Sudharson K, et al. Data mining with privacy protection using precise elliptical curve cryptography[J]. Intelligent Automation &amp; Soft Computing, 2023, 35(1): 839-851.</p>
+<p>[6] Issa W, Moustafa N, Turnbull B, et al. Blockchain-based federated learning for securing internet of things: A comprehensive survey[J]. ACM Computing Surveys, 2023, 55(9): 1-43. </p>
+<p>[7] Juels A, Catalano D, Jakobsson M. Coercion-resistant electronic elections [J]. Towards Trustworthy Elections, 2010: 37-63.</p>
+<p>[8] 付伟伟, 王晓京, 彭行一, 等. 基于随机矩阵的一种新型电子投票方案[J]. 计算机应 用, 2019, 39(S2): 280-283. </p>
+<p>[9] 邵清, 洪皓洁, 李斌. 基于Elgamal强盲签名的区块链电子投票方案研究[J]. 小型微型计算机系统, 2021, 42(11): 2400-2406. </p>
+<p>[10] Choi S, Kang J, Chung K S. Design of Blockchain based e-Voting System for Vote  Requirements[C]. Journal of Physics: Conference Series, 2021, 1944: 012002. </p>
+<p>[11] 王旭升. 基于区块链的安全多方计算研究与分析[D]. 兰州理工大学, 2022.DOI: 10. 27206&#x2F;d. cnki. ggsgu. 2021. 000334.</p>
+<p>[12] 李亚伟. 集合运算的安全多方计算及应用[D].长安大学, 2023. DOI: 10. 26976&#x2F;d. cnki. gchau. 2022. 001357.</p>
+<p>[13] Hu XX, Wang BC, Hu YP. Threshold NTRU Public-Key Cryptosystem[J]. Application Research of Computers, 2005(11):103-105.</p>
 
                 
               </div>

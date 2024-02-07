@@ -16,16 +16,16 @@
   <meta name="author" content="贾利凯">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇文章讲述了Java多线程入门指北">
+    <meta name="description" content="钢轨智能识别系统使用手册账号管理系统 局部  人为做标准  和陈总的照片对比  首页     底部  数据录入  上面三张轮播图 一张铁路的 一张中铁物总 一张钢轨        断口  录入基本信息—&gt;提交 新增一个端口 基本数据显示在上方 下方 编号：自增 试件编号 炉罐号 识别灰斑 灰斑面积：A1… 总面积 是否合格         试件编号  炉罐号  灰斑面积：A1…  总">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java多线程入门指北">
-<meta property="og:url" content="http://example.com/2023/04/20/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:title" content="《我的第一篇博客》">
+<meta property="og:url" content="http://example.com/2022/06/29/%E9%92%A2%E8%BD%A8%E6%99%BA%E8%83%BD%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E7%89%88%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/index.html">
 <meta property="og:site_name" content="贾利凯的博客">
-<meta property="og:description" content="本篇文章讲述了Java多线程入门指北">
+<meta property="og:description" content="钢轨智能识别系统使用手册账号管理系统 局部  人为做标准  和陈总的照片对比  首页     底部  数据录入  上面三张轮播图 一张铁路的 一张中铁物总 一张钢轨        断口  录入基本信息—&gt;提交 新增一个端口 基本数据显示在上方 下方 编号：自增 试件编号 炉罐号 识别灰斑 灰斑面积：A1… 总面积 是否合格         试件编号  炉罐号  灰斑面积：A1…  总">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
-<meta property="article:published_time" content="2023-04-20T06:27:00.000Z">
-<meta property="article:modified_time" content="2023-06-04T11:23:01.000Z">
+<meta property="article:published_time" content="2022-06-29T08:40:24.000Z">
+<meta property="article:modified_time" content="2024-02-07T08:59:38.555Z">
 <meta property="article:author" content="贾利凯">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://p0.itc.cn/q_70/images03/20220124/b58552058d184a3f96a00cdaba352c4c.jpeg">
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Java多线程入门指北 - 贾利凯的博客</title>
+  <title>《我的第一篇博客》 - 贾利凯的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java多线程入门指北"></span>
+            <span id="subtitle" data-typed-text="《我的第一篇博客》"></span>
           
         </div>
 
@@ -232,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-20 14:27" pubdate>
-          2023年4月20日 下午
+        <time datetime="2022-06-29 16:40" pubdate>
+          2022年6月29日 下午
         </time>
       </span>
     
@@ -244,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          977 字
+          454 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          9 分钟
+          4 分钟
         
       </span>
     
@@ -302,12 +302,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java多线程入门指北</h1>
+            <h1 style="display: none">《我的第一篇博客》</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 个月前
+                    本文最后更新于：11 分钟前
                   
                 
               </p>
@@ -315,42 +315,132 @@
             
               <div class="markdown-body">
                 
-                <p>本篇文章讲述了Java多线程入门指北</p>
-<span id="more"></span>
+                <span id="more"></span>
 
-<h2 id="什么是进程、线程？"><a href="#什么是进程、线程？" class="headerlink" title="什么是进程、线程？"></a>什么是进程、线程？</h2><p><strong>线程是处理器任务调度和执行的基本单位，进程是操作系统资源分配的基本单位。</strong></p>
-<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>​	进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。在 Java 中，当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</p>
-<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><p>​	一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享进程的<strong>堆</strong>和<strong>方法区</strong>资源，但每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
-<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><ul>
-<li><p>内存分配：进程之间的地址空间和资源是相互独立的，同一个进程之间的线程会共享线程的地址空间和资源（堆和方法区）。 </p>
+
+
+<h2 id="钢轨智能识别系统使用手册"><a href="#钢轨智能识别系统使用手册" class="headerlink" title="钢轨智能识别系统使用手册"></a>钢轨智能识别系统使用手册</h2><h3 id="账号管理系统"><a href="#账号管理系统" class="headerlink" title="账号管理系统"></a>账号管理系统</h3><ul>
+<li><p>局部</p>
 </li>
-<li><p>资源开销：每个进程具备各自的数据空间，进程之间的切换会有较大的开销。属于同一进程的线程会共享堆和方法区，同时具备私有的虚拟机栈、本地方法栈、程序计数器，线程之间的切换资源开销较小。</p>
+<li><p>人为做标准</p>
 </li>
-</ul>
-<h2 id="并发和并行的区别："><a href="#并发和并行的区别：" class="headerlink" title="并发和并行的区别："></a>并发和并行的区别：</h2><ul>
-<li>并发：一个处理器处理多个任务，按时间片轮流处理多个任务（轮流执行）</li>
-<li>并行：单位时间多个处理器同时处理多个任务（同时执行）</li>
-</ul>
-<h2 id="同步和异步的区别："><a href="#同步和异步的区别：" class="headerlink" title="同步和异步的区别："></a>同步和异步的区别：</h2><ul>
-<li><strong>同步</strong> ： 发出一个调用之后，在没有得到结果之前， 该调用就不可以返回，一直等待。</li>
-<li><strong>异步</strong> ：调用在发出之后，不用等待返回结果，该调用直接返回。</li>
-</ul>
-<h2 id="多线程的优缺点："><a href="#多线程的优缺点：" class="headerlink" title="多线程的优缺点："></a>多线程的优缺点：</h2><ul>
-<li>优点：<ul>
-<li>提高程序的执行效率提高程序运行速度</li>
-<li>当一个线程进入等待状态或者阻塞时，CPU可以先去执行其他线程，提高CPU的利用率。</li>
-</ul>
+<li><p>和陈总的照片对比</p>
 </li>
-<li>缺点：<ul>
-<li>频繁的上下文切换会影响多线程的执行速度。</li>
-<li>死锁</li>
-<li>线程不安全</li>
-<li>内存泄露</li>
-</ul>
+<li><p>首页</p>
 </li>
 </ul>
-<h2 id="线程的上下文切换"><a href="#线程的上下文切换" class="headerlink" title="线程的上下文切换"></a>线程的上下文切换</h2><p>​	线程在执行过程中会有自己的运行条件和状态（也称上下文），比如上文所说到过的程序计数器，栈信息等。即便是单核的处理器也会支持多线程，处理器会给每个线程分配CPU时间片来实现这个机制。时间片是CPU分配给每个线程的执行时间，一般来说时间片非常的短，所以处理器会不停地切换线程。</p>
-<p>​	CPU会通过时间片分配算法来循环执行任务，当前任务执行完一个时间片后会切换到下一个任务，但切换前会保存上一个任务的状态，因为下次切换回这个任务时还要加载这个任务的状态继续执行，从任务保存到在加载的过程就是一次上下文切换。</p>
+<p><img src="/../picture/image-20231201214707560.png" srcset="/img/loading.gif" lazyload alt="image-20231201214707560"></p>
+<ul>
+<li><p>底部</p>
+<ul>
+<li><p>数据录入</p>
+<ul>
+<li>上面三张轮播图<ul>
+<li>一张铁路的</li>
+<li>一张中铁物总</li>
+<li>一张钢轨</li>
+</ul>
+<p> </p>
+</li>
+<li><img src="/../picture/image-20231202003015568.png" srcset="/img/loading.gif" lazyload alt="image-20231202003015568"></li>
+</ul>
+</li>
+<li><p>断口</p>
+<ul>
+<li>录入基本信息—&gt;提交</li>
+<li>新增一个端口<ul>
+<li>基本数据显示在上方</li>
+<li>下方<ul>
+<li>编号：自增</li>
+<li>试件编号</li>
+<li>炉罐号</li>
+<li>识别灰斑</li>
+<li>灰斑面积：A1…</li>
+<li>总面积</li>
+<li>是否合格</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><img src="/../picture/image-20231202005423556.png" srcset="/img/loading.gif" lazyload alt="image-20231202005423556"></p>
+</li>
+<li><p>试件编号</p>
+</li>
+<li><p>炉罐号</p>
+</li>
+<li><p>灰斑面积：A1…</p>
+</li>
+<li><p>总面积</p>
+</li>
+<li><p>右上角：绿色合格，红色不合格</p>
+</li>
+<li><p>数据查询</p>
+</li>
+<li><p>我的</p>
+</li>
+</ul>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li><ul>
+<li>数据录入<ul>
+<li><img src="/../picture/image-20231201214846474.png" srcset="/img/loading.gif" lazyload alt="image-20231201214846474"></li>
+<li><img src="/../picture/image-20231201215014071.png" srcset="/img/loading.gif" lazyload alt="image-20231201215014071"></li>
+</ul>
+</li>
+<li>数据查询</li>
+<li>我的</li>
+</ul>
+</li>
+<li><p><img src="/../picture/image-20231201214819994.png" srcset="/img/loading.gif" lazyload alt="image-20231201214819994"></p>
+</li>
+</ul>
+<p><strong>表编号：</strong> 加一个字段</p>
+<p><strong>上传时间：</strong></p>
+<p><strong>试验人员：</strong></p>
+<p><strong>检验结果：</strong>全部合格算合格</p>
+<p><strong>钢厂：</strong></p>
+<p><strong>钢轨材质：</strong></p>
+<p><strong>路局：</strong></p>
+<p>a</p>
+<p><strong>试验编号：</strong></p>
+<p><strong>灰斑位置及尺寸</strong></p>
+<p><strong>总面积</strong></p>
+<p><strong>是否合格 绿色合格，红色不合格</strong></p>
+<p>卡片1</p>
+<p>试件编号</p>
+<p>炉罐号</p>
+<p>灰斑面积 :</p>
+<p>灰斑总面积</p>
+<p>露头灰斑：多选</p>
+<p>是否合格</p>
+<p>识别灰斑（上传图片）</p>
+<p>灰斑图片</p>
+<p>灰斑面积</p>
+<p>灰斑总面积</p>
+<p>灰斑图片</p>
+<p>灰斑面积  A1</p>
+<p>灰斑总面积</p>
+<ul>
+<li><p>单个端口录入页面多张图片逻辑</p>
+</li>
+<li><p>多个断口是否需要显示共有数据卡片</p>
+</li>
+<li><p>通知</p>
+</li>
+<li></li>
+</ul>
+<p>html</p>
+<p>css</p>
+<p>2周 js b站找视频，方应航</p>
+<p>学一周，每天刷三道题，提升写代码能力（一起刷）</p>
+<p>计算机网络，http，一个小时（一起看）</p>
+<p>Linux基础，y总linux基础课，</p>
+<p>Vue框架，b站，项目（全栈之巅）</p>
+<p>Java 毕设 论文</p>
 
                 
               </div>
